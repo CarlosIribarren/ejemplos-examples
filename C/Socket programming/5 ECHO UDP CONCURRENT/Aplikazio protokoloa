@@ -1,0 +1,51 @@
+Aplikazio protokoloa
+
+Aplikazioa, eta bere protokoloa, “Echo aplikazioa UDP erabiliz” praktikan definitutakoaren oso
+antzekoa da, baina zerbitzari konkurrentera moldatua. Kasu hauetan ohikoa den bezala zerbitzariak
+portu jakin bateko (50005) socket baten bitartez jasoko du bezero bakoitzaren lehenengo mezua.
+Mezu honen erantzuna eta ondorengo mezu truke guztia beste portu batekin identifikatutako socket
+baten bitartez egingo da (prozesu ume batek egingo du, hain zuzen ere).
+Kasu honetan, bertsio iteratiboan ez bezala, bezero bakoitza prozesu ezberdin batek zerbitzatzen
+du eta beraz, bezeroak amaitutakoan zerbitzariko prozesua ere amaitu behar da. TCPren kasuan
+modu erraz batean komunikatzen da bezeroaren amaiera: TCP konexioa itxiz. UDPren kasuan,
+aldiz, mekanismo hori erabiltzea ezinezkoa da UDPn ez delako konexiorik sortzen. Gogoratu UDPn
+connect funtzioa erabiltzeko aukera dagoen arren, ez dela benetako konexiorik ezartzen.
+Arazo honentzako irtenbide posible bat, eta praktika honetan inplementatu beharrekoa, hauxe da:
+bezeroak amaitzean datagrama huts bat (daturik gabekoa) bidaliko dio zerbitzariari. Honek, hau
+jasotzean, elkarrizketa bukatu dela ulertuko du eta exekuzioa amaituko du.
+
+
+Zerbitzaria
+
+Praktika honetako zerbitzaria “Echo aplikazioa UDP erabiliz” praktikakoan oinarrituta dago,
+baina 50001 portua erabili ordez 50005 portua erabiltzen du bezero bakoitzaren lehenengo mezua
+jasotzeko. Egin beharreko moldaketak 3 pausotan bana daitezke:1. Sortu prozesu ume bat bezero bakoitzeko.
+Zerbitzari nagusiak mezu bat jasotzean prozesu ume bat sortuko du eta prozesu ume honek
+burutuko du hurrengo mezu truke guztia dinamikoki esleitutako portu baten bitartez. Zerbitzariaren
+prozesu umeek socketa “konektatuko” dute connect funtzioa erabilita, eta beraz, sendto eta
+recvfrom funtzioen ordez write eta read erabiliko ditu. Prozesu ume batek irakurketa batean 0 byte
+irakurriz gero, prozesua amaitu beharko da.
+2. Amaituriko prozesu umeak modu egokian tratatu.
+Amaitutako zerbitzari prozesuak zonbi egoeran gera ez daitezen signal funtzioa erabili beharko
+da TCP zerbitzari konkurrentean bezala.
+3. Ustekabean amaitutako bezeroak modu egokian tratatu.
+Bezero bat ustekabean amaitzen bada, datagrama huts bat bidali gabe, berari dagokion zerbitzari
+prozesu umea etengabe blokeatuta geratuko da bezeroaren mezuaren zain. Arazo hau saihesteko
+zerbitzari prozesuak ez badu ezer jasotzen denbora tarte batean komunikazioa amaitutzat emango
+du eta bere exekuzioa amaituko du. Praktika honetarako itxoite denbora 2 minututan jarriko dugu.
+
+
+Bezeroa
+
+Inplementatu beharreko bezeroa “Echo aplikazioa UDP erabiliz” praktikako bezeroan oinarritzen
+da, baina zerbitzari konkurrentera moldatua. Horretarako, bezeroak lehenengo mezua zerbitzariko
+50005 portura bidaliko du, baina ondorengo guztiak mezuaren erantzunean erabilitako portura
+bidali beharko dizkio. Konturatu kasu honetan bezeroak ezingo duela bere socketa “konektatu”
+lehenengo mezu trukea burutu arte.
+Erabiltzaileak komunikazioa bukatu nahi duenean, hau da, sarrera estandarretik EOF irakurtzean
+zerbitzariari daturik gabeko mezu bat bidali behar zaio. Horretarako write edo sendto funtzioen 3.
+parametroan (bidali nahi den datuaren tamaina adierazten duena) 0 adierazi beharko da eta 2.
+parametroan (datua bera adierazteko balio duena) edozein datu jar daiteke (egokiena 0 edo NULL
+jartzea da).
+Inplementazioa errazte aldera suposatuko dugu ez dela daturik galduko sarean nahiz eta UDP
+erabili. Beraz, ez da beharrezkoa izango select funtzioa erabiltzea eta birtransmisioak egitea.
