@@ -1,0 +1,27 @@
+Aplikazio protokoloa
+
+Aplikazio hau bereziki sinplea da, are gehiago garraio mailan UDP erabiltzen duenez gero.
+Aplikazioaren izaera dela eta ez dago komando, erantzun edo parametrorik definitu beharrik.
+Gainera, aplikazioaren prozedura orokorra mezu trukaketa bakar bat besterik ez da: bezeroak datuak
+bidaliko ditu UDP segmentu batean eta zerbitzariak datu berdinak bidaliko dizkio beste segmentu
+batean.
+
+
+Zerbitzaria
+
+Aplikazio honetako zerbitzariak ez dauka berezitasun handirik. UDP socket batetik jasotzen
+dituen datuak bufer batean gorde eta dauden moduan bidaliko dizkio igorleari socket beretik. Echo
+aplikazioak normalean 7 portua erabili arren guk 50001 portua erabiliko dugu, normalean 7 portua
+erabiltzeko administratzaile baimenak behar dira eta.
+
+
+Bezeroa
+
+Inplementatu beharreko bezeroak sarrera estandarretik irakurriko ditu datuak (horretarako erabili
+fgets funtzioa) eta lerroak banan bana bidaliko dizkio zerbitzariari (zerbitzariaren IP helbidea
+erabiltzaileak pasako dio argumentu bezala). Bidaltzen duen lerro bakoitzeko erantzuna jasotzeko
+zain geratuko da eta behin mezua jasotakoan pantailan idatziko du. Garraio mailan UDP erabiliko
+duenez bidalitako karaktere guztiak irakurketa bakarrean jasoko ditu.
+Bezeroak prozedura amaitutzat emango du sarrera estandarretik EOF (fitxategi bukaera)
+karakterea irakurtzean (fgets funtzioak NULL itzultzen du kasu honetan) edo erroreren bat gertatzendenean. Modu honetan bezeroaren sarrera estandarra fitxategi batera berbidera genezake arazorik
+gabe. Teklatutik EOF adierazteko CTRL+D tekla konbinazioa erabiltzen da.
