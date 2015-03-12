@@ -1,0 +1,32 @@
+Aplikazio protokoloa
+
+Aplikazio hau bereziki sinplea da, baina hala ere, bezero eta zerbitzariaren arteko komunikazio
+egokia bermatzeko badira definitu beharreko hainbat kontu.
+Aplikazioaren izaera dela eta ez dago komando, erantzun edo parametrorik definitu beharrik.
+Definitu beharreko bakarra nolabaiteko prozedura orokorra da. Prozedura TCP konexio bat ezarriz
+hasiko da. Puntu honetatik aurrera bezeroak datuak bidali ditzake eta zerbitzariak datuak irakurri
+ahala inongo aldaketarik gabe bidaliko dizkio bezeroari. Prozedura amaitzeko bezeroak TCP
+konexioa itxiko du.
+
+
+Zerbitzaria
+
+Aplikazio honetako zerbitzariak ez dauka berezitasun handirik. TCP konexio batetik jasotzen
+duen guztia bufer batean gorde eta dagoen moduan bidaliko du konexio beretik. Echo aplikazioak
+normalean 7 portua erabili arren guk 50002 portua erabiliko dugu, normalean 7 portuan irekiera
+pasibo bat egiteko administratzaile baimenak behar dira eta.
+
+
+Bezeroa
+
+Inplementatu beharreko bezeroak sarrera estandarretik irakurriko ditu datuak (horretarako erabili
+fgets funtzioa) eta lerroak banan bana bidaliko dizkio zerbitzariari (zerbitzariaren IP helbidea
+erabiltzaileak pasako dio argumentu bezala). Bidaltzen duen lerro bakoitzeko erantzuna jasotzeko
+zain geratuko da eta behin mezua jasotakoan pantailan idatziko du. Kontuz hemen, TCPk ez baitu
+bermatzen espero diren karaktere guztiak irakurketa bakarrean jasoko direla! Dena den, bezeroakbadaki zenbat karaktere jaso behar dituen (bidalitako kopuru bera) eta beraz, behar adina irakurketa
+egin beharko dira.
+Bezeroak prozedura amaitutzat eman eta TCP konexioa itxiko du sarrera estandarretik EOF
+(fitxategi bukaera) karakterea irakurtzean (fgets funtzioak NULL itzultzen du kasu honetan) edo
+erroreren bat gertatzen denean. Modu honetan bezeroaren sarrera estandarra fitxategi batera
+berbidera genezake arazorik gabe. Teklatutik EOF adierazteko CTRL+D tekla konbinazioa
+erabiltzen da.
