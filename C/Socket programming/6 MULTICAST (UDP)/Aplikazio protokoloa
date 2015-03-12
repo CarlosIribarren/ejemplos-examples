@@ -1,0 +1,25 @@
+Aplikazio protokoloa
+
+Praktika honetako aplikazio protokoloa oso sinplea da. Aplikazio honen helburu nagusia ikasleak
+multicast helbideekin lan egiten duen programa bat inplementatzea denez, ez dauka funtzionalitate
+interesgarririk. Hala ere, aukera emango du ikasle bakoitzak programa inplementatzen noiz bukatu
+duen erregistratzeko.
+Programa bidaltzailea periodikoki 10 karakteretako kodeak bidaliko ditu 224.0.0.11 IP multicast
+helbideko 50007 portura. Programa bidaltzaileak erabiliko duen IP helbidea eta portua ezezagunak
+dira, baina noski, berak bidalitako mezu bat jasotzean ezagutu ahalko dira.
+Programa bidaltzaileak bidalitako kodea jasotzen duenak (programa jasotzailea) bidaltzaileari
+mezu bat bidali beharko dio. Mezu honek bi atal izango ditu kateaturik. Lehenengo jasotako kode
+berbera egongo da eta ondoren jasotzailea programatu duten ikasleen izenak.
+Dena ondo joan bada zerbitzariak ikasleen izenak gordeko ditu datu base batean eta “OK”
+mezuarekin erantzungo dio mezuaren igorleari (programa jasotzaileari). Bestela “ER” kodea
+bidaliko dio. Kontuan izan mezu hauek ez direla bidaliko multicast helbidera, programa jasotzailea
+erabiltzen ari den unicast helbidera baizik.
+
+
+Jasotzailea
+
+Inplementatu beharreko programak 224.0.0.11 IP multicast helbidera bidalitako mezuak
+irakurtzeko gai izan beharko da. Behin mezu bat jasota (10 karakteretako kode bat) mezu honen
+igorleari erantzun beharko dio. Erantzunean kodea eta ikaslearen izena bidali beharko ditu mezu
+berberean. Mezu honek 2 bytetako erantzuna jasoko du: OK dena ondo joan bada edo ER kodea
+okerra bada.
