@@ -1,0 +1,35 @@
+Aplikazio protokoloa
+
+Aplikazioa eta bere protokoloa “Echo aplikazioa TCP erabiliz” praktikan definitutako berbera
+da.
+
+
+Zerbitzaria
+
+Inplementatu beharreko zerbitzaria “Echo aplikazioa TCP erabiliz” praktikako zerbitzari
+iteratiboan oinarritzen da. Zerbitzari iteratiboa moldatu beharko da zerbitzari konkurrentea izan
+dadin. Moldaketa bi pausotan egin daiteke:
+1. Sortu prozesu ume bat konexio eskaera bakoitzeko.
+Zerbitzaria aldatu beharko da onartzen den konexio eskaera bakoitzeko prozesu ume berri bat
+sortzeko. Horretarako fork funtzioa erabili. Prozesu umeak jaso eta erantzungo ditu bezeroaren
+mezuak eta prozesu nagusia beste konexio batzuen zain geratuko da.
+Zerbitzari iteratiboaren eta konkurrentearen arteko ezberdintasuna ikusteko ireki bi terminal
+leiho eta exekutatu bakoitzean bezero bat zerbitzari berdinaren kontra. Iteratiboaren kasuan
+bezeroetako batek (bigarren tokian abiarazi denak) ez du erantzunik jasoko besteak bukatu arte.
+Konkurrentearen kasuan bi bezeroak batera zerbitzatuko dira.
+Zerbitzariak martxan dituen prozesu kopurua ikusteko komando hau erabil daiteke (suposatuz
+zerbitzariaren izena echo_zer_tcp_konk dela):
+ps -fa | grep echo_zerb_tcp_konk
+Komando honekin ikus daiteke nola sortzen den prozesu berri bat bezero bakoitzeko eta nolageratzen diren bukatutako prozesu umeak zonbi egoeran.
+2. Amaitutako prozesu umeak modu egokian tratatu.
+Prozesu nagusia martxan dagoen bitartean hildako prozesu umeak zonbi egoeran gelditzen dira.
+Ume bat hiltzean SIGCHLD seinalea jasoko du prozesu nagusiak eta erabili signal funtzioa kasu
+hauetan prozesu zonbiak ekiditeko. Berriro ere erabili ps komandoa ikusteko nola orain ez den
+umerik geratzen zonbi egoeran.
+
+
+Bezeroa
+
+Aplikazio honetako bezeroa “Echo aplikazioa TCP erabiliz” praktikako berbera da.
+Erosotasunagatik moldaketa bat egin diogu eta argumentu bezala IP helbide batez aparte domeinu
+izen bat ere pasa dakioke.
