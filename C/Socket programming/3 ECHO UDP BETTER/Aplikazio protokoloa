@@ -1,0 +1,43 @@
+Aplikazio protokoloa
+
+Aplikazioa eta bere protokoloa “Echo aplikazioa UDP erabiliz” praktikan definitutako berbera
+da.
+
+
+Zerbitzaria
+
+Praktika honetako zerbitzaria “Echo aplikazioa UDP erabiliz” praktikaren antzekoa da, baina
+50001 portua erabili ordez 50003 portua erabiltzen du. Bestela, aldaketa bakarra zerbitzariak
+datagrama galerak simulatzen dituela da, bezeroak birtransmisioak ondo egiten dituen ikusi ahal
+izateko. Horretarako, zerbitzariak argumentu bat jaso dezake. Argumentu horrek zerbitzariak
+datagrama bat galtzeko probabilitatea adierazten du eta 0 eta 1 artean egon beharko da.
+Argumenturik eman ezean 0 balioa erabiliko da eta beraz, zerbitzariak ez du datagrama galera
+gehigarririk eragingo.
+
+Bezeroa
+
+Inplementatu beharreko bezeroa “Echo aplikazioa UDP erabiliz” praktikako bezeroan oinarritzen
+da, baina lau hobekuntza gehitu behar zaizkio.
+1. Zerbitzaria domeinu izen baten bidez adierazteko aukera.
+Bezeroak argumentu bezala, IP helbide batez aparte, domeinu izen bat ere onartu behar du.
+Horretarako gethostbyname funtzioa erabili beharko da inet_aton funtzioaren ordez.
+2. UDP “konektatua” erabili.
+Bezeroaren socketa zerbitzariarenarekin “konektatu” beharko da connect funtzioa erabilita.
+Honekin batera sendto eta recvfrom funtzioak write eta read funtzioez ordeztu beharko dira.
+Aldaketa hauek egitean erabiltzaileak ez luke aldaketarik nabari behar.
+3. Denbora jakin batean erantzunik jaso ezean mezua birtransmitituko da.
+Mezu trukaketan UDP erabilita datuak galtzeko arriskua dago. Hori gertatuz gero Echo bezeroa
+recvfrom edo read funtzioan blokeatuta geratuko da iristen ez den mezu baten zain. Blokeo aukera
+hau saihesteko select funtzioa erabil daiteke. Funtzio hau blokea daiteke socketean zerbait jaso arte,
+baina blokeo denbora maximo bat adieraziz. Beraz, select funtzioa desblokeatzen bada socketean
+irakurtzeko ezer ez dagoelarik, bezeroak datuak birtransmitituko ditu eta ondoren berriro
+blokeatuko da select funtzioari deituz. Praktika honetan segundo 1 itxoin beharko da birtransmisio
+bat egin aurretik eta erabiltzailea arazoaz ohartzeko komeni da birtransmisio bakoitzeko mezu bat
+pantailaratzea.
+Kontuan izan datuak galdu ordez atzeratu egin direlako birtransmisioak gertatuz gero datagrama
+bikoiztuak egongo direla sarean. Hau dela eta bezeroak arazoak izango ditu eta datuen
+sekuentziazioa beharrezkoa izango da arazo hau saihesteko. Dena den, praktika errazte aldera arazo
+hau ez hartu kontuan.
+4. Bidalketa kopuru maximo bat zehaztu.
+Azken hobekuntza bezala, egokia litzateke bidalketa saiakera kopuru maximo bat zehaztea
+(adibidez 3) eta muga horretara iristean bezeroa amaitzea.
