@@ -6,7 +6,9 @@
 <h5>- Html5-Css3 :</h5>
 	Basic Html5-Css3 examples. Form, Menu, Ajax, FallBacks.
 <h5>- Java :</h5>
-	Java SE, Java EE, Servlet, JSP, JSTL.
+	Design pattern : AbstractFactory, Adapter, Factory, Singleton, Strategy.
+	Java SE : Class, Control Statements, Loops, Inheritance, Polymorphism, Stream, Equals, CompareTo, Thread.
+	Java EE : Servlet, JSP, JSTL.
 <h5>- JavaScript</h5>
 	Native js.
 <h5>- Jquery :</h5>
@@ -30,7 +32,9 @@
 <h5>- Html5-Css3 :</h5>
 	Ejemplos basicos de Html5-Css3. Form, Menu, Ajax, FallBacks.
 <h5>- Java :</h5>
-	Java SE, Java EE, Servlet, JSP, JSTL.
+	Patrones de diseño : AbstractFactory, Adapter, Factory, Singleton, Strategy.
+	Java SE : Clases, Sentecias de Control, Bucles, Herencia, Polimorfismo, Flujos de Bytes, Equals, CompareTo, Hilos.
+	Java EE : Servlet, JSP, JSTL.
 <h5>- JavaScript</h5>
 	JavaScript nativo.
 <h5>- Jquery :</h5>
