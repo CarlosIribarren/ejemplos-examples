@@ -8,7 +8,7 @@
 <h5>- Java :</h5>
 	Design pattern : AbstractFactory, Adapter, Factory, Singleton, Strategy.
 	Java SE : Class, Control Statements, Loops, Inheritance, Polymorphism,
-	 	    Stream, Equals, CompareTo, Thread.
+	 	  	  Stream, Equals, CompareTo, Thread.
 	Java EE : Servlet, JSP, JSTL.
 <h5>- JavaScript</h5>
 	Native js.
@@ -35,7 +35,7 @@
 <h5>- Java :</h5>
 	Patrones de diseño : AbstractFactory, Adapter, Factory, Singleton, Strategy.
 	Java SE : Clases, Sentecias de Control, Bucles, Herencia, Polimorfismo,
-		    Flujos de Bytes, Equals, CompareTo, Hilos.
+		  	  Flujos de Bytes, Equals, CompareTo, Hilos.
 	Java EE : Servlet, JSP, JSTL.
 <h5>- JavaScript</h5>
 	JavaScript nativo.
