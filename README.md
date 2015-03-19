@@ -29,7 +29,7 @@
 <p>En este repositorio se pueden encontrar distintos ejemplos de programacion. </p>
 <hr>
 <h5>- C :</h5>
- 	Programacion en Socket. 
+ 	Programacion con Socket. 
 <h5>- Html5-Css3 :</h5>
 	Ejemplos basicos de Html5-Css3. Form, Menu, Ajax, FallBacks.
 <h5>- Java :</h5>
