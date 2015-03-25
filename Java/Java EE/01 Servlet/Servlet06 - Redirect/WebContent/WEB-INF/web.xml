@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Servlet Redirect 2</display-name>
+  
+    <!-- DEFINIMOS LA PANTALLA DE INICIO => inicio
+    	Esta URL no existe, pero existe un servlet que responde a
+    	este servlet, asi que, llamara al servlet correspondiente   --> 
+  		
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+    <!-- MAPEO DE SERVLET LLAMADO => PantallaInicio  
+  		RESPONDE A LA URL => /inicio   --> 
+  		
+  <servlet>
+    <servlet-name>P1</servlet-name>
+    <servlet-class>Inicio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>P1</servlet-name>
+    <url-pattern>/inicio</url-pattern>
+  </servlet-mapping>
+  
+  <!-- MAPEO DE SERVLET LLAMADO => PantallaSegunda  
+  		RESPONDE A LA URL => /segundaPantalla   --> 
+  
+  <servlet>
+    <servlet-name>P2</servlet-name>
+    <servlet-class>Fin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>P2</servlet-name>
+    <url-pattern>/fin</url-pattern>
+  </servlet-mapping>
+</web-app>
