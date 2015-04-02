@@ -13,14 +13,9 @@
 <h5>- JavaScript</h5>
 	Native js.
 <h5>- Jquery :</h5>
-	Menu.
+	Menus.
 <h5>- Php :</h5> 
 	Contact form, PHPMailer.
-
-<hr>
-								Author : Carlos Iribarren
-<hr>
-
 
 
 
@@ -40,10 +35,6 @@
 <h5>- JavaScript</h5>
 	JavaScript nativo.
 <h5>- Jquery :</h5>
-	Menu.
+	Menus.
 <h5>- Php :</h5> 
 	Formulario de contacto, PHPMailer.
-
-<hr>
-								Autor : Carlos Iribarren
-<hr>
