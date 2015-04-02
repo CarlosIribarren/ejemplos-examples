@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hola mundo JS</title>
+		<meta charset="utf-8" />
+		
+	</head>
+
+	<body>
+		
+		<a href="#" onclick="javascript:CambiarCSS()" >Cambiar CSS con JS</a>
+		
+		<div id="partePrincipal">
+			Div
+		</div>
+
+		<!-- El problema de los scripts es que mientras se descargan,
+			bloquean la descarga de otros contenidos importantes de la página,
+			como por ejemplo las imágenes.
+			Por eso es mejor cargar los scripts al final del proceso,
+			cuando las imaganes, datos,... ya sean cargado.
+			Asi el usuario puede ir viendo por la pagina-->
+		<script language="JavaScript" SRC="funcionJS.js"></script>
+
+	</body>
+</html>
