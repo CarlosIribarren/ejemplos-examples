@@ -1,9 +1,4 @@
-/*
-
- -webkit- => se usa para que el @keyframes funcione en los navegadores Chrome, Safari, Opera.
-
-*/
-
+@import url(http://fonts.googleapis.com/css?family=Istok+Web);
 
 /* Chrome, Safari, Opera */
 @-webkit-keyframes slidy {
@@ -17,7 +12,7 @@
 95% { left: -300%; }
 100% { left: -400%; }
 }
-/* other than Chrome, Safari, Opera  */
+/* NO Chrome, Safari, Opera */
 @keyframes slidy {
 0% { left: 0%; }
 20% { left: 0%; }
@@ -29,40 +24,33 @@
 95% { left: -300%; }
 100% { left: -400%; }
 }
-
-figure { 
- 	font-weight: 100;
+body, figure {
+margin: 0; background: #101010;
+font-family: Istok Web, sans-serif;
+font-weight: 100;
 }
-div#captioned-gallery { 
-      /* tamaño */ 
-    height:300px;
-    width:300px; 
-    overflow: hidden; 
+div#captioned-gallery {
+/* tamaño */
+height:300px;
+width:300px;
+overflow: hidden;
 }
-figure.slider { 
-  	position: relative; width: 500%;
-  	font-size: 0; 
+figure.slider {
+position: relative; width: 500%;
+font-size: 0;
 	/* 30s tiempo total = la suma de todas las transiciones */
-	animation: 30s slidy infinite; /* Other than Chrome, Safari, Opera */
-	-webkit-animation: 30s slidy infinite; /* Chrome, Safari, Opera */
-	
+	/* NO Chrome, Safari, Opera */
+	animation: 30s slidy infinite;
+	/* Chrome, Safari, Opera */
+	-webkit-animation: 30s slidy infinite;
 }
-figure.slider figure { 
-  	width: 20%; 
-	height: auto;
-  	display: inline-block;  
-	position: inherit; 
+figure.slider figure {
+width: 20%; height: auto;
+display: inline-block; position: inherit;
 }
-figure.slider img {
-	width: 100%; 
-	height: auto; 
-}
-figure.slider figure figcaption { 
-  	position: absolute; 
-	bottom: 0;
-  	background: rgba(0,0,0,0.4);
-  	color: #fff; 
-	width: 100%;
-  	font-size: 2rem; 
-	padding: .6rem; 
-}
+figure.slider img { width: 100%; height: auto; }
+figure.slider figure figcaption {
+position: absolute; bottom: 0;
+background: rgba(0,0,0,0.4);
+color: #fff; width: 100%;
+font-size: 2rem; padding: .6rem;
