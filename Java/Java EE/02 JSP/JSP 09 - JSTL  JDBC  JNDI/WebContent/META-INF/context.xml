@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ESTE FICHERO DEFINE UN RECURSO
+	EL NOMBRE DEL RECURSO ES => jdbc/empresaReparto
+	LUEGO ESTE RECURSO SE MAPEA EN EL WEB.XML 
+	USANDO JNDI -->
+
+<Context>
+	<Resource name="jdbc/empresaReparto" auth="Container"
+	type="javax.sql.DataSource"
+	maxActive="100" maxldle="30" maxWait="10000"
+	username="tomcat7" password="java"
+	driverClassName="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost:3306/empresaReparto"
+	>
+	
+	</Resource>
+
+
+</Context>
