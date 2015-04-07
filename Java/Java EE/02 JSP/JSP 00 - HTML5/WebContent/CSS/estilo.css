@@ -1,0 +1,22 @@
+header,nav, section, article, footer{
+display:block;
+background-color:aliceblue;
+padding:3px;
+margin:5px;
+}
+nav{
+width:15%;
+float:left;
+height:350px;
+background-color: red;
+}
+section{
+width:75%;
+float:left;
+}
+article{
+background-color:cadetblue;
+}
+footer{
+clear:both;
+}
