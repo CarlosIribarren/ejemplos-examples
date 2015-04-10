@@ -11,7 +11,7 @@
 	 	  	  Stream, Equals, CompareTo, Thread.
 	Java EE : 
 		- Servlet : Mapping, Init Param, Redirect. 
-		- JSP : Directive, Scriptlets, Tags, Actions, JSTL, JSTL-JDBC, JSTL-FMT, JSTL-JDBC-JNDI, 					Internalization.
+		- JSP : Directive, Scriptlets, Tags, Actions, JSTL, JSTL(JDBC,FMT,JDBC), JNDI, Internalization.
 <h5>- JavaScript</h5>
 	Native js.
 <h5>- Jquery :</h5>
@@ -35,7 +35,7 @@
 		  	  Flujos de Bytes, Equals, CompareTo, Hilos.
 	Java EE : 
 		- Servlet : Mapping, Init Param, Redirect. 
-		- JSP : Directive, Scriptlets, Tags, Actions, JSTL, JSTL-JDBC, JSTL-FMT, JSTL-JDBC-JNDI, 					Internalization.
+		- JSP : Directive, Scriptlets, Tags, Actions, JSTL, JSTL(JDBC,FMT,JDBC), JNDI, Internalization.
 <h5>- JavaScript</h5>
 	JavaScript nativo.
 <h5>- Jquery :</h5>
