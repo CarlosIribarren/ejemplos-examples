@@ -13,6 +13,8 @@
 		- Servlet : Mapping, Init Param, Redirect. 
 		- JSP : Directive, Scriptlets, Tags, Actions, 
 			   JSTL, JSTL(JDBC,FMT,JDBC), JNDI, Internalization.
+		- JSF : Managed Bean.
+		- EE : JMS-MDB.
 <h5>- JavaScript</h5>
 	Native js.
 <h5>- Jquery :</h5>
@@ -38,6 +40,8 @@
 		- Servlet : Mapping, Init Param, Redirect. 
 		- JSP : Directive, Scriptlets, Tags, Actions,
 			   JSTL, JSTL(JDBC,FMT,JDBC), JNDI, Internalization.
+		- JSF : Managed Bean.
+		- EE : JMS-MDB.
 <h5>- JavaScript</h5>
 	JavaScript nativo.
 <h5>- Jquery :</h5>
