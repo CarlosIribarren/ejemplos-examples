@@ -14,7 +14,7 @@
 		- JSP : Directive, Scriptlets, Tags, Actions, 
 			   JSTL, JSTL(JDBC,FMT,JDBC), JNDI, Internalization.
 		- JSF : Managed Bean.
-		- EE : JMS-MDB.
+		- EE : JMS-MDB, EJB-Injection.
 <h5>- JavaScript</h5>
 	Native js.
 <h5>- Jquery :</h5>
@@ -41,7 +41,7 @@
 		- JSP : Directive, Scriptlets, Tags, Actions,
 			   JSTL, JSTL(JDBC,FMT,JDBC), JNDI, Internalization.
 		- JSF : Managed Bean.
-		- EE : JMS-MDB.
+		- EE : JMS-MDB, EJB-Injection.
 <h5>- JavaScript</h5>
 	JavaScript nativo.
 <h5>- Jquery :</h5>
