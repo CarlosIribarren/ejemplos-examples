@@ -1,0 +1,14 @@
+<linearlayout android:layout_height="fill_parent" android:layout_width="fill_parent" android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+  
+  <textview android:layout_height="wrap_content" android:layout_width="fill_parent" android:text="@string/hello">
+  <textview android:id="@+id/azimuth" android:layout_height="wrap_content" android:layout_width="fill_parent">
+
+  <textview
+      android:id="@+id/pitch"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content" >
+
+  <textview android:id="@+id/roll" android:layout_height="wrap_content" android:layout_width="fill_parent">
+  <view android:id="@+id/mycompass" android:layout_height="fill_parent" android:layout_width="fill_parent" class="com.AndroidDetOrientation.Compass">
+  
+</view></textview></textview></textview></textview></linearlayout>
