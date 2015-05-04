@@ -25,10 +25,6 @@
 	Contact form, PHPMailer.
 
 
-<span style="display: block; background-color:red; text-decoration: underline; text-align: center; color:green; border: solid 2px black; border-radius: 10px;"> 
-Idioma Español
-</span>
-
 
 <h3>Ejemplos de Programacion</h3>
 <p>En este repositorio se pueden encontrar distintos ejemplos de programacion. </p>
