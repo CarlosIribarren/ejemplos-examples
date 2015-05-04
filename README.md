@@ -1,4 +1,4 @@
-<h3>Examples of Programming</h3>
+<h2>Examples of Programming</h2>
 <p>In this repository you can find several examples of programming. </p>
 <hr>
 <h5>- Android :</h5>
@@ -26,7 +26,7 @@
 
 
 
-<h3>Ejemplos de Programacion</h3>
+<h2>Ejemplos de Programacion</h2>
 <p>En este repositorio se pueden encontrar distintos ejemplos de programacion. </p>
 <hr>
 <h5>- Android :</h5>
