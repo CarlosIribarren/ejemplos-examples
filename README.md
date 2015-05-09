@@ -2,7 +2,7 @@
 <p>In this repository you can find several examples of programming. </p>
 <hr>
 <h5>- Android :</h5>
- 	Onclick, Azimut, Compass, Orientation, Languages, Menu, Gyroscope, DownloadXML REST, GPS, TTS, Calcular distancia entre dos puntos GPS, Poligonos.
+ 	Onclick, Azimut, Compass, Orientation, Languages, Menu, Gyroscope, DownloadXML REST, GPS, TTS, Voice Recognition, Calcular distancia entre dos puntos GPS, Poligonos.
 <h5>- C :</h5>
  	Socket programming. 
 <h5>- Html5-Css3 :</h5>
@@ -30,7 +30,7 @@
 <p>En este repositorio se pueden encontrar distintos ejemplos de programacion. </p>
 <hr>
 <h5>- Android :</h5>
- 	Onclick, Azimut, Brújula, Orientación, Idiomas, Menu, Giroscopio, DescargarXML REST, GPS, TTS, Calculate distance between two GPS points, Polygons.
+ 	Onclick, Azimut, Brújula, Orientación, Idiomas, Menu, Giroscopio, DescargarXML REST, GPS, TTS, Reconocimiento de Voz, Calculate distance between two GPS points, Polygons.
 <h5>- C :</h5>
  	Programacion con Socket. 
 <h5>- Html5-Css3 :</h5>
