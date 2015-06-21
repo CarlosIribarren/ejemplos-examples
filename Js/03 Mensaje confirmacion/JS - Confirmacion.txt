@@ -1,0 +1,10 @@
+		//mensaje de confirmacion utilizando JavaScript nativo
+		var r = confirm("Estas seguro?");
+		if(r==true)
+		{
+
+		}
+		else
+		{
+		
+		}
