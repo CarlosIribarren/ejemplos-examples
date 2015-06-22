@@ -1,0 +1,23 @@
+#uno{
+	width:102px;
+	background-color:red;
+	
+}
+
+#dos{
+	
+	float:left;
+	width:50px;
+	background-color:green;
+	
+}
+
+#tres{
+
+	border:solid;
+	border-width:1px;
+	float:left;
+	width:50px;
+	background-color:orange;
+	
+}
