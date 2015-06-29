@@ -11,7 +11,9 @@
 
 <h1> Scriptlets DECLARACIONES </h1>
 
-<!-- definir variable [!] -->
+<!-- definir variable 
+    para que una variable sea visible en todos los trozos de Scriplet,
+    se tiene que utilizar con el simbolo especial [!] -->
 <%! int maxAlumnosClase = 30; %>
 <!-- mostrar variable [=] -->
 <p> Se ha definido una variable en un trozo de Scriptlet y se lee desde otro trozo de Scriplet </p>
