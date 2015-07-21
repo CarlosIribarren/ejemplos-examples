@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+<!-- ************************* READER DE BASE DE DATOS *************************************************************** -->
+<bean class="JdbcItemReader" id="Reader"> 
+    <property name="dataSource" ref="appDataSource"></property> 
+    <property name="sql" value="SELECT * FROM FAMILIA"></property> 
+    <property name="rowMapper"> 
+        <bean class="BaseRowMapper"> 
+            <property name="rowMapper"> 
+                <bean class="RowMapper"></bean> 
+            </property> 
+        </bean> 
+    </property> 
+</bean>
+
+<!-- ************************* WRITER DE FICHERO (delimitado por campos de longitud fija) ****************************** -->
+<bean id="WriterSalida_Fichero_Caracter_Fijo" class="FilteredFlatFileItemWriter" scope="step"> 
+    <property name="name" value="WriterSalida_Fichero_Caracter_Fijo"></property>
+    <!-- FICHERO DE SALIDA --> 
+    <property name="resource"> 
+        <bean class="FileSystemResource"> 
+            <constructor-arg ref="FicheroSalida"></constructor-arg> 
+        </bean> 
+    </property> 
+    <!-- CODIFICACION -->
+    <property name="encoding" value="ASCII"></property> 
+    <!-- ESTILO DE SALIDA -->
+    <property name="lineAggregator"> 
+        <bean class="FormatterLineAggregator"> 
+            <property name="format" value="%-5s%-2s%-2s"></property> 
+            <property name="fieldExtractor"> 
+                <bean class="BeanWrapperFieldExtractor"> 
+                    <property name="names" value="fAM_IDFAMILIA,fAM_NOMCAS,fAM_NOMCAS"></property> 
+                </bean> 
+            </property> 
+        </bean> 
+    </property> 
+    <!-- Opcional -->   
+    <property name="filter"> 
+        <bean class="Filtro"></bean> 
+    </property>
+</bean>
+
+<!-- ************************* PROCESSOR DE FILTRADO*************************************************************** -->
+<bean id="Processor_Filtrado" class="FilteringItemProcessor"> 
+    <property name="filter"> 
+        <bean class="Filtro"></bean> 
+    </property> 
+</bean>
+
+<!-- ************************* STEP LISTENER *************************************************************** -->
+<bean id="customStepListener" class="CustomStepListener" />
+<!-- ************************* READER LISTENER *************************************************************** -->
+<bean id="customItemReaderListener" class="CustomItemReaderListener" />
+<!-- ************************* WRITER LISTENER *************************************************************** -->
+<bean id="customItemWriterListener" class="CustomItemWriterListener" />
+
+</beans>
