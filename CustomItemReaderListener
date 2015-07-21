@@ -1,0 +1,25 @@
+import org.springframework.batch.core.ItemReadListener;
+
+public class CustomItemReaderListener implements ItemReadListener<Bean1> {
+ 
+	@Override
+	public void beforeRead() {
+		System.out.println("ItemReadListener - beforeRead" );
+	}
+ 
+	@Override
+	public void afterRead(Bean1 item) {
+		//Cuando el ItemReader ya no tienen nada para leer, el valor del item es null
+		if(item!=null)
+		{
+			String nombreFamilia = item.getfAM_NOMCAS();
+			System.out.println("ItemReadListener - afterRead : " + nombreFamilia );
+		}
+	}
+ 
+	@Override
+	public void onReadError(Exception ex) {
+		System.out.println("ItemReadListener - onReadError");
+	}
+ 
+}
