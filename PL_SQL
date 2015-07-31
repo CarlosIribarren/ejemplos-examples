@@ -1,0 +1,42 @@
+DECLARE
+    MIERROR EXCEPTION;
+    
+    CURSOR productos IS
+    SELECT idproducto,impresion_condiciones_ce,impresion_datos_ce from producte where impresion_datos_ce is not null;
+    
+    producto productos%ROWTYPE;
+    
+    CONCAS VARCHAR2(1200);
+    CONCAT VARCHAR2(1200);
+    DATCAS VARCHAR2(1200);
+    DATCAT VARCHAR2(1200);
+BEGIN
+    
+    
+    OPEN productos;
+    LOOP
+        FETCH productos INTO producto;
+        EXIT WHEN productos%NOTFOUND;
+    
+        select sdesc into CONCAS from literal where idliteral=producto.impresion_condiciones_ce and ididioma='CAS';
+        select sdesc into CONCAT from literal where idliteral=producto.impresion_condiciones_ce and ididioma='CAT';
+        
+        select sdesc into DATCAS from literal where idliteral=producto.impresion_datos_ce and ididioma='CAS';
+        select sdesc into DATCAT from literal where idliteral=producto.impresion_datos_ce and ididioma='CAT';
+        
+        insert into PRODUCTOS_SD_COMANDA (IDPRODUCTO,TEXTO_CONDICIONES_CAS,TEXTO_CONDICIONES_CAT,TEXTO_DATOS_CASTEXTO_DATOS_CAT)
+        values(producto.idproducto,CONCAS,CONCAT,DATCAS,DATCAT);
+        
+        
+    END LOOP;
+        
+    
+    COMMIT;
+    
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('EXCEPCION EN LA ACTUALIZACION DE DATOS');
+            ROLLBACK;
+            RAISE MIERROR;
+END;
+/
