@@ -11,6 +11,10 @@ public class App
 {
     public static void main( String[] args )
     {
+    //1. File system : Resource resource = appContext.getResource("file:c:\\testing.txt");
+    //2. URL path : Resource resource = appContext.getResource("url:http://www.yourdomain.com/testing.txt");
+    //3. Class path : Resource resource = appContext.getResource("classpath:com/mkyong/common/testing.txt");
+    
     	ApplicationContext appContext = 
     	   new ClassPathXmlApplicationContext(new String[] {"If-you-have-any.xml"});
 
