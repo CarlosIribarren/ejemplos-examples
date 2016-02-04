@@ -12,6 +12,6 @@ public class HomeController {
 	@RequestMapping(value = "/")
 	public String home() {
 		System.out.println("HomeController: procesando petición...");
-		return "/WEB-INF/home.jsp";
+		return "home";
 	}
 }
