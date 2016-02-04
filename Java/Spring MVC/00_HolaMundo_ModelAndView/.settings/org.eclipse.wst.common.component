@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="00_HolaMundo_ModelAndView">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/" source-path="/carlos"/>
+        <wb-resource deploy-path="/" source-path="/target" tag="defaultRootSource"/>
+        <property name="context-root" value="00_HolaMundo_ModelAndView"/>
+        <property name="java-output-path" value="/00_HolaMundo_ModelAndView/build/classes"/>
+    </wb-module>
+</project-modules>
