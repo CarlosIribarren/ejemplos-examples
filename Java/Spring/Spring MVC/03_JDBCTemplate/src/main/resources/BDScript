@@ -1,0 +1,9 @@
+CREATE TABLE estudiantebd.Estudiante(
+   ID   INT NOT NULL AUTO_INCREMENT,
+   NOMBRE VARCHAR(20) NOT NULL,
+   EDAD  INT NOT NULL,
+   PRIMARY KEY (ID)
+
+);
+
+insert into estudianteBD.estudiante (id,nombre,edad) values (1,'carlos','31')
