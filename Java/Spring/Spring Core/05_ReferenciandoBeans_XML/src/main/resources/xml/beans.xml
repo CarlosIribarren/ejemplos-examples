@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Asociar el nombre de un Bean a un alias o apodo 
+		2 maneras diferentes de asociar :
+			1.- Con el tag alias ========================> <alias></alias> 
+			2.- Con la propiedad 'name' del tag bean ====> <bean name=""> 
+	-->
+	
+	<bean id="persona" class="com.curso.springcore.beans.Persona" name="personaName1">
+		<property name="id" value="1" ></property>
+		<property name="nombre" value="Jaime" ></property>
+		<property name="apodo" value="Spri" ></property>
+		<property name="pais" ref="pais"></property>
+	</bean>
+
+	<bean id="pais" class="com.curso.springcore.beans.Pais">
+		<property name="nombre" value="Hawai"></property>
+		<property name="ciudad" ref="ciudad"></property>
+	</bean>
+
+	<bean id="ciudad" class="com.curso.springcore.beans.Ciudad" >
+		<property name="nombre" value="Ohau" ></property>
+	</bean>
+	
+	
+	<alias name="persona" alias="personaAlias1"/>
+	
+</beans>
