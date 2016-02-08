@@ -28,12 +28,12 @@ public class HomeController {
 		
 	}
 	
+	//URL REST FULL => "/persona/new" y "POST" => INSERTAR PERSONA
+	//@ModelAttribute("persona") Persona persona => Se recibe el obj Persona
 	@RequestMapping(value = "/persona/new", method=RequestMethod.POST)
 	public String enviarParametros(@ModelAttribute("persona") Persona persona, Model model)
 	{
-		System.out.println("enviarParametros: recibiendo obj Persona : " + persona.toString());
 		model.addAttribute(persona);
-		
 		return "person";
 	}
 	

@@ -7,7 +7,6 @@ public class Persona {
 	private String apellido;
 	private String poblacion;
 	
-	
 	public int getId() {
 		return id;
 	}
@@ -32,12 +31,4 @@ public class Persona {
 	public void setPoblacion(String poblacion) {
 		this.poblacion = poblacion;
 	}
-	@Override
-	public String toString() {
-		return "Persona [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", poblacion=" + poblacion + "]";
-	}
-	
-	
-	
-
 }
