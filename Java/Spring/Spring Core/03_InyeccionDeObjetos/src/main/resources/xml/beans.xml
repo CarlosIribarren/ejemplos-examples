@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		 	
+	<!-- Se hace la Inyeccion de Objetos utilizando la propiedad REF (referencia)  -->
+	<bean id="persona" class="com.curso.springcore.beans.Persona">
+		<property name="id" value="1" ></property>
+		<property name="nombre" value="Jaime" ></property>
+		<property name="apodo" value="Spri" ></property>
+		<property name="pais" ref="pais"></property>
+	</bean>
+
+	<bean id="pais" class="com.curso.springcore.beans.Pais">
+		<property name="nombre" value="Hawai"></property>
+		<property name="ciudad" ref="ciudad"></property>
+	</bean>
+
+	<bean id="ciudad" class="com.curso.springcore.beans.Ciudad" >
+		<property name="nombre" value="Ohau" ></property>
+	</bean>
+</beans>
