@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- NOTA : No es recomendable utilizar esta manera (XML + autowired) 
+				porque si un obj es complejo, no se apreciara en el XML, ya que se ocultan las dependencias -->
+	
+	<!-- Inyeccion de Objetos "autowired=ByName". Spring intenta buscar el objeto por el nombre del Bean -->
+	<bean id="persona" class="com.curso.springcore.beans.Persona" autowire="byName" >
+		<property name="id" value="1" ></property>
+		<property name="nombre" value="Jaime" ></property>
+		<property name="apodo" value="Spri" ></property>
+	</bean>
+
+	<!-- Inyeccion de Objetos "autowired=byType". Spring intenta buscar el objeto por el tipo
+	Si tenemos mas de una clase con el mismo tipo, se produce un error -->
+	<bean id="persona2" class="com.curso.springcore.beans.Persona" autowire="byType" >
+		<property name="id" value="1" ></property>
+		<property name="nombre" value="Jaime" ></property>
+		<property name="apodo" value="Spri" ></property>
+	</bean>
+
+	<bean id="pais" class="com.curso.springcore.beans.Pais">
+		<property name="nombre" value="Hawai"></property>
+	</bean>
+	<bean id="ciudad" class="com.curso.springcore.beans.Ciudad" >
+		<property name="nombre" value="Ohau" ></property>
+	</bean>
+	
+</beans>
