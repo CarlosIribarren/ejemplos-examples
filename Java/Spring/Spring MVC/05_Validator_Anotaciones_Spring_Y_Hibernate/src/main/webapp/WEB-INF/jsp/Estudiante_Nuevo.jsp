@@ -33,7 +33,14 @@
 				<form:errors path="edad" cssClass="error"/>
 			</li>
 		</ul>	
-		
+		<ul>
+			<li>
+				<label>Introduce un numero:</label> 
+				<form:input path="resultado.a"/>
+				<form:errors path="resultado.a" cssClass="error"/>
+			</li>
+		</ul>	
+				
 		<input type="submit" value="Guardar"/>
 		
 	</form:form>
