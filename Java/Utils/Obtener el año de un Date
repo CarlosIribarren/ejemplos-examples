@@ -1,0 +1,22 @@
+	/**
+	 * Metodo privado para obtener el año.
+	 * 
+	 * @param fecha
+	 * @return Integer El año.
+	 */
+	private Integer getYear(Date fecha)
+	{
+		//Preparar resultado
+		Integer result = null;
+		
+		try {
+			Calendar calendar = new GregorianCalendar();
+			calendar.setTime(fecha);
+			result = calendar.get(Calendar.YEAR);
+		} catch (Exception e) {
+			LOGGER.error("Error al obtener el año de la fecha " + fecha.toString(),e);
+		}
+		
+		//Retornar respuesta
+		return result;
+	}
