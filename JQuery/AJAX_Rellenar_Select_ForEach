@@ -1,0 +1,22 @@
+			 // Llamada ajax: se devolverán los options del select
+			 $.get( urlRecarga, function( data ) {
+
+
+				 //Verificar el resultado de la llamada GET
+				 if(data.results != null)
+				 {
+					 // Vacía el contenido del select de motivo
+					 $("#motivo").html('');
+					 
+					 // Carga el select con el resultado
+					 $.each(data.results, function (i, item) {
+						 debugger;
+						    $('#motivo').append($('<option>', { 
+						        value: item.id,
+						        text : item.text 
+						    }));
+						});
+					 
+				 }
+
+			 });
