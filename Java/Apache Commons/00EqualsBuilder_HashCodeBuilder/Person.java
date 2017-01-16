@@ -89,5 +89,4 @@ public class Person implements Serializable {
 
     return hcBuilder.toHashCode();
   }
-
 }
