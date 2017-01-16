@@ -65,7 +65,7 @@ public class Person implements Serializable {
       return true;
     }
 
-    if ((obj == null) || !(obj instanceof Person)) {
+    if ((obj == null) || (this.getClass() != obj.getClass())) {
       return false;
     }
 
@@ -89,4 +89,5 @@ public class Person implements Serializable {
 
     return hcBuilder.toHashCode();
   }
+  
 }
