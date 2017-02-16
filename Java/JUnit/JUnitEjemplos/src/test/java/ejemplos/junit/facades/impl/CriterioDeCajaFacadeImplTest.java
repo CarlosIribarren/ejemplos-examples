@@ -9,8 +9,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import org.mockito.Mockito;
 
 import ejemplos.junit.bean.CriterioDeCaja;
+import ejemplos.junit.daos.CriterioDeCajaDao;
 import ejemplos.junit.facades.CriterioDeCajaFacade;
 
 
@@ -163,6 +165,26 @@ public class CriterioDeCajaFacadeImplTest {
 
     // Comparar el resultado despues de ejecutar el metodo
     Assert.assertTrue(this.criterioDeCajaSalida.equals(this.criterioDeCajaEntrada));
+  }
+
+  @Test
+  public final void testObtenerYSumar1() {
+
+    // Preparar resultado
+    final CriterioDeCaja criterioDeCajaPreparado = new CriterioDeCaja();
+    criterioDeCajaPreparado.setAdquisicionesBase(new Double(2));
+    criterioDeCajaPreparado.setAdquisicionesCuota(new Double(2));
+    criterioDeCajaPreparado.setEntregasBase(new Double(2));
+    criterioDeCajaPreparado.setEntregasCuota(new Double(2));
+
+    // Preparar llamada y respuesta
+    final CriterioDeCajaDao criterioDeCajaDao = Mockito.mock(CriterioDeCajaDao.class);
+    Mockito.when(criterioDeCajaDao.getCriterioDeCaja(1)).thenReturn(criterioDeCajaPreparado);
+
+    final CriterioDeCaja criterioDeCajaRespuesta = this.criterioDeCajaFacade.obtenerYSumar1(1);
+
+    Assert.assertEquals("El objeto Criterio de Caja no es igual!!!", criterioDeCajaPreparado, criterioDeCajaRespuesta);
+
   }
 
   // **********************************
