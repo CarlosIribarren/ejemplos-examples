@@ -13,4 +13,12 @@ public interface CriterioDeCajaFacade {
    */
   void asignarValoresSinActividad(CriterioDeCaja criterioDeCaja);
 
+  /**
+   * Obtiene un Criterio de Caja dado un id de la BD y le suma 1 en todos sus valores.
+   *
+   * @param id Identificador
+   * @return Retorna el Criterio de Caja
+   */
+  CriterioDeCaja obtenerYSumar1(int id);
+
 }
