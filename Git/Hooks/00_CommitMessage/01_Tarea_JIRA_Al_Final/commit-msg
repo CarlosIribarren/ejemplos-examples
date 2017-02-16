@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Automatically add JIRA Issues identifier
+#
+# NOTA: Para poder insertar saltos de línea con el comando echo se usa la siguiente sintaxis : echo -e "\n linea 1 \n linea 2 \n" > salida.txt
+#		Se usa el -e y el salto de línea se reprenta con \n, y todo va entrecomillado.  
+#
+#
+#
+
+echo -e '\nICEIDLST-1252 "Reubicación de proyectos"' >> $1
