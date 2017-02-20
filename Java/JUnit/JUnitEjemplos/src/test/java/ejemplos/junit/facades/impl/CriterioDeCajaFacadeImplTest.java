@@ -1,4 +1,4 @@
-/**Copyright(c)2017,Gipuzkoako Foru Aldundia*Eskubide guztiak erreserbatuta/All rights reserved*/
+
 package ejemplos.junit.facades.impl;
 
 import java.util.Arrays;
@@ -16,9 +16,14 @@ import ejemplos.junit.daos.CriterioDeCajaDao;
 import ejemplos.junit.facades.CriterioDeCajaFacade;
 
 
-/***
- * @author EuroHelp S.L.
+/**
+ * Este ejemplo de test esta realizado utilizando la clase de JUnit4 Parameterized.class
+ * Este ejemplo de test esta realizado sin utilizar el contexto de Spring. Las clases se instancian utilizando Java SE.
+ * La manera de levantar el Facade CriterioDeCajaFacade es el constructor del Test.
+ * El facade tiene una depedecia con el DAO CriterioDeCajaDAO. El dao se encuentra instanciado (inicializado) en la
+ * propia clase del Facade, haciendo un new manualmente en la definicion del atributo.
  */
+
 @RunWith(value = Parameterized.class)
 public class CriterioDeCajaFacadeImplTest {
 

@@ -9,7 +9,15 @@ import ejemplos.junit.facades.CriterioDeCajaFacade;
 
 public class CriterioDeCajaFacadeImpl implements CriterioDeCajaFacade {
 
+  // *****************
+  // *** ATRIBUTOS ***
+  // *****************
+
   private final CriterioDeCajaDao criterioDeCajaDao = new CriterioDeCajaDaoImpl();
+
+  // *****************
+  // **** METODOS ****
+  // *****************
 
   public void asignarValoresSinActividad(final CriterioDeCaja criterioDeCaja) {
 
