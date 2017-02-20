@@ -8,9 +8,6 @@ import ejemplos.junit.bean.CriterioDeCaja;
 import ejemplos.junit.daos.CriterioDeCajaDao;
 
 
-/**
- * @author EuroHelp S.L.
- */
 public class CriterioDeCajaDaoImpl implements CriterioDeCajaDao {
 
   public CriterioDeCajaDaoImpl() {
