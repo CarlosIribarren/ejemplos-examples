@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{3E173D6A-2B71-43A0-B859-3D64CFFA3918}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LoginErregistratzea</RootNamespace>
+    <AssemblyName>LoginErregistratzea</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>LoginErregistratzea.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>LoginErregistratzea.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBKudeatzailea, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DBKudeatzailea\DBKudeatzailea\bin\Debug\DBKudeatzailea.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Datu_Basea\Global.asax" />
+    <Content Include="Datu_Basea\lanakHTMLratu.xsl" />
+    <Content Include="Datu_Basea\SGTA.xml" />
+    <Content Include="Datu_Basea\SGTA_DB.mdb" />
+    <Content Include="Erregistroa\Egiaztatu.aspx" />
+    <Content Include="Erregistroa\Erregistratzea.aspx" />
+    <Content Include="Erregistroa\Ikasleak\Ikasleak.aspx" />
+    <Content Include="Erregistroa\Ikasleak\IkasleLanGenerikoak.aspx" />
+    <Content Include="Erregistroa\Irakasleak\EsportatuLanak.aspx" />
+    <Content Include="Erregistroa\Irakasleak\InportatuLanakXml.aspx" />
+    <Content Include="Erregistroa\Ikasleak\LanaInstantziatu.aspx" />
+    <Content Include="Erregistroa\Irakasleak\Irakasleak.aspx" />
+    <Content Include="Erregistroa\Irakasleak\irakasleLanak.aspx" />
+    <Content Include="Erregistroa\Irakasleak\LanGenerikoakGehitu.aspx" />
+    <Content Include="Hasiera.aspx" />
+    <Content Include="Erregistroa\Login.aspx" />
+    <Content Include="Erregistroa\Menua.aspx" />
+    <Content Include="Erregistroa\PasahitzaAldatu.aspx" />
+    <Content Include="Erregistroa\PasahitzaBerreskuratu.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datu_Basea\Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Egiaztatu.aspx.designer.vb">
+      <DependentUpon>Egiaztatu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Egiaztatu.aspx.vb">
+      <DependentUpon>Egiaztatu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Erregistratzea.aspx.designer.vb">
+      <DependentUpon>Erregistratzea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Erregistratzea.aspx.vb">
+      <DependentUpon>Erregistratzea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Ikasleak\Ikasleak.aspx.designer.vb">
+      <DependentUpon>Ikasleak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Ikasleak\Ikasleak.aspx.vb">
+      <DependentUpon>Ikasleak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Ikasleak\IkasleLanGenerikoak.aspx.designer.vb">
+      <DependentUpon>IkasleLanGenerikoak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Ikasleak\IkasleLanGenerikoak.aspx.vb">
+      <DependentUpon>IkasleLanGenerikoak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\EsportatuLanak.aspx.designer.vb">
+      <DependentUpon>EsportatuLanak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\EsportatuLanak.aspx.vb">
+      <DependentUpon>EsportatuLanak.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\InportatuLanakXml.aspx.designer.vb">
+      <DependentUpon>InportatuLanakXml.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\InportatuLanakXml.aspx.vb">
+      <DependentUpon>InportatuLanakXml.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Ikasleak\LanaInstantziatu.aspx.designer.vb">
+      <DependentUpon>LanaInstantziatu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Ikasleak\LanaInstantziatu.aspx.vb">
+      <DependentUpon>LanaInstantziatu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\Irakasleak.aspx.designer.vb">
+      <DependentUpon>Irakasleak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\Irakasleak.aspx.vb">
+      <DependentUpon>Irakasleak.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\irakasleLanak.aspx.designer.vb">
+      <DependentUpon>irakasleLanak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\irakasleLanak.aspx.vb">
+      <DependentUpon>irakasleLanak.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\LanGenerikoakGehitu.aspx.designer.vb">
+      <DependentUpon>LanGenerikoakGehitu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Irakasleak\LanGenerikoakGehitu.aspx.vb">
+      <DependentUpon>LanGenerikoakGehitu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Hasiera.aspx.designer.vb">
+      <DependentUpon>Hasiera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hasiera.aspx.vb">
+      <DependentUpon>Hasiera.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\Menua.aspx.designer.vb">
+      <DependentUpon>Menua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\Menua.aspx.vb">
+      <DependentUpon>Menua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\PasahitzaAldatu.aspx.designer.vb">
+      <DependentUpon>PasahitzaAldatu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\PasahitzaAldatu.aspx.vb">
+      <DependentUpon>PasahitzaAldatu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Erregistroa\PasahitzaBerreskuratu.aspx.designer.vb">
+      <DependentUpon>PasahitzaBerreskuratu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Erregistroa\PasahitzaBerreskuratu.aspx.vb">
+      <DependentUpon>PasahitzaBerreskuratu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Datu_Basea\lanGenerikoak.dtd" />
+    <None Include="Datu_Basea\SGTA.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Irudiak\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52668</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

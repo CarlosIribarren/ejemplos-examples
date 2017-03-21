@@ -1,0 +1,8 @@
+﻿<!ELEMENT lanGenerikoak (lana)+>
+<!ATTLIST lanGenerikoak xmlns CDATA #FIXED "http://ji.ehu.es/sgta">
+<!ELEMENT lana (kodea, deskribapena, aurreikusitakoOrduak, ustiapenean, lanMota)>
+<!ELEMENT kodea (#PCDATA)>
+<!ELEMENT deskribapena (#PCDATA)>
+<!ELEMENT aurreikusitakoOrduak (#PCDATA)>
+<!ELEMENT ustiapenean (#PCDATA)>
+<!ELEMENT lanMota (#PCDATA)>

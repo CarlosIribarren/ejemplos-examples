@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="yes"?>
+<lanGenerikoak xmlns:SGTA="http://ji.ehu.es/SGTA">
+  <lana>
+    <kodea>SGTA_Test5</kodea>
+    <deskribapena>5. testa (% 20)</deskribapena>
+    <aurreikusitakoOrduak>5</aurreikusitakoOrduak>
+    <ustiapenean>true</ustiapenean>
+    <lanMota>azterketa</lanMota>
+  </lana>
+  <lana>
+    <kodea>SGTA_Lab12</kodea>
+    <deskribapena>Irakasgaiko 12. laborategia</deskribapena>
+    <aurreikusitakoOrduak>12</aurreikusitakoOrduak>
+    <ustiapenean>true</ustiapenean>
+    <lanMota>laborategia</lanMota>
+  </lana>
+  <lana>
+    <kodea>SGTA_Azterketa</kodea>
+    <deskribapena>BNV CV </deskribapena>
+    <aurreikusitakoOrduak>35</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>azterketaAA</lanMota>
+  </lana>
+  <lana>
+    <kodea>SGTA2</kodea>
+    <deskribapena>Laborategia ASP</deskribapena>
+    <aurreikusitakoOrduak>15</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>laborategia</lanMota>
+  </lana>
+  <lana>
+    <kodea>Proba1</kodea>
+    <deskribapena>karlos</deskribapena>
+    <aurreikusitakoOrduak>12</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>azterketa</lanMota>
+  </lana>
+  <lana>
+    <kodea>SEGE</kodea>
+    <deskribapena>DDD</deskribapena>
+    <aurreikusitakoOrduak>1</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>azterketa</lanMota>
+  </lana>
+  <lana>
+    <kodea>AAA</kodea>
+    <deskribapena>SSSS</deskribapena>
+    <aurreikusitakoOrduak>1</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>azterketa</lanMota>
+  </lana>
+  <lana>
+    <kodea>LANA_Proba1</kodea>
+    <deskribapena>SGTA_taldeLana</deskribapena>
+    <aurreikusitakoOrduak>12</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>lana</lanMota>
+  </lana>
+  <lana>
+    <kodea>SGTA_Test4</kodea>
+    <deskribapena>Irakasgaiko 4. testa</deskribapena>
+    <aurreikusitakoOrduak>3</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>azterketa</lanMota>
+  </lana>
+  <lana>
+    <kodea>SGTA_Lab7</kodea>
+    <deskribapena>Irakasgaiko 7. laborategia: XML .NET-en</deskribapena>
+    <aurreikusitakoOrduak>12</aurreikusitakoOrduak>
+    <ustiapenean>true</ustiapenean>
+    <lanMota>laborategia</lanMota>
+  </lana>
+  <lana>
+    <kodea>sas</kodea>
+    <deskribapena>sasa</deskribapena>
+    <aurreikusitakoOrduak>3</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>azterketa</lanMota>
+  </lana>
+  <lana>
+    <kodea>SGTA_Azt100</kodea>
+    <deskribapena>Azterketa globala</deskribapena>
+    <aurreikusitakoOrduak>10</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>azterketa</lanMota>
+  </lana>
+  <lana>
+    <kodea>SGTA_1</kodea>
+    <deskribapena>Erraza</deskribapena>
+    <aurreikusitakoOrduak>33</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>lana</lanMota>
+  </lana>
+</lanGenerikoak>
