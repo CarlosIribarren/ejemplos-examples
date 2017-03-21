@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<lanGenerikoak xmlns:PMOO="http://ji.ehu.es/PMOO">
+  <lana>
+    <kodea>PMOO_Lab1</kodea>
+    <deskribapena>Lehen laborategia</deskribapena>
+    <aurreikusitakoOrduak>12</aurreikusitakoOrduak>
+    <ustiapenean>true</ustiapenean>
+    <lanMota>laborategia</lanMota>
+  </lana>
+  <lana>
+    <kodea>PMOO_test13</kodea>
+    <deskribapena>13. testa</deskribapena>
+    <aurreikusitakoOrduak>1</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>azterketa</lanMota>
+  </lana>
+</lanGenerikoak>
