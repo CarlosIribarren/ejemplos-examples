@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hiztegia SYSTEM "file:/docencia/cuentas/j/jgascon002/Mahaigaina/hiztegia.dtd">
+<hiztegia>
+    <sarrera id='ahulezia'>
+        <burua>
+            ahulezia
+        </burua>
+        <kategoriak>
+            <kategoria>iz.</kategoria>
+        </kategoriak>
+        <adierak>
+            <adiera>
+                <definizioa>Ahultasuna.</definizioa>
+                <adibideak>
+                    <adibidea>Baina, pazientzia soberakina ez ote da ahulezia.</adibidea>
+                    <adibidea> Honetan ageri da gure historiografiak hezur muinetaraino sarturik daraman gaitza: ahulezia, kasik ezereza.</adibidea>
+                    <adibidea>Hor baitago arrazoibide horren ahulezia.</adibidea> 
+                </adibideak>
+            </adiera> 
+        </adierak>
+    </sarrera>
+    
+    <sarrera id="ahultasun">
+        <burua>
+            ahultasun
+        </burua>
+        <kategoriak>
+            <kategoria>iz.</kategoria>
+        </kategoriak>
+        <adierak>
+            <adiera>
+                <definizioa>Indar, kemen, bizkortasun urritasuna; hortik datorren egoera.</definizioa>
+                <ikus ref="ahulezia">ahulezia</ikus>
+                <adibideak>
+                    <adibidea>Bere indarretan ahultasunik ezagutu gabe.</adibidea>
+                    <adibidea>Gorputzaren ahultasuna zuzpertzeko.</adibidea> 
+                </adibideak>
+            </adiera>
+            <adiera>
+                <definizioa>Kemen edo adore eskasa adierazten duen egite edo jokaera.</definizioa>
+                <adibideak>
+                    <adibidea>Pilatosen ahultasuna.</adibidea>
+                </adibideak>
+            </adiera>
+        </adierak>
+    </sarrera>
+    
+    <sarrera id="aztoratu">
+        <burua>
+            <moduak>
+                <partizipioa>aztoratu</partizipioa>
+                <infinitiboa>aztora</infinitiboa>
+                <gerundioa>aztoratzen</gerundioa>
+            </moduak>
+        </burua>
+        <kategoriak>
+            <kategoria>da-du ad.</kategoria>
+        </kategoriak>
+        <adierak>
+            <adiera>
+                <definizioa>Izuak, ezinegonak, gertaera bereziren batek, animaliak, eta hed. pertsonak, asaldatu, bere onetatik atera.</definizioa>
+                <adibideak>
+                    <adibidea>Ardiak aztoraturik, alde orotara lasterka, ez jakin zer egin, ez nora jo.</adibidea>
+                    <adibidea>Aztoratutako astarra baino zakarragoa.</adibidea> 
+                    <adibidea>Hobira joan eta gorputz hila aurkitu ez dutelako aztoratuta dabiltza.</adibidea> 
+                </adibideak>
+            </adiera>
+        </adierak>
+    </sarrera>
+    
+    
+    <sarrera id="alfer">
+        <burua>alfer</burua>
+        <kategoriak>
+            <kategoria>izond.</kategoria>
+            <kategoria>iz.</kategoria>
+        </kategoriak>
+        <adierak>
+            <adiera>
+                <kategoriak>
+                    <kategoria>izond.</kategoria>
+                </kategoriak>
+                <definizioa>Ezertarako balio ez duena, fruitu edo ondoriorik gabekoa.</definizioa>
+                <adibideak>
+                    <adibidea>Hitz alferrik ez dadila zuen artean entzun. Lan alferra gertatu zen hura.</adibidea>
+                    <adibidea>Eztabaida alferretan.</adibidea>
+                </adibideak>
+            </adiera>
+            <adiera>
+                <kategoriak>
+                    <kategoria>izond.</kategoria>
+                    <kategoria>iz.</kategoria>
+                </kategoriak>
+                <definizioa>Lanik egin nahi ez duena, nagia.</definizioa>
+                <adibideak>
+                    <adibidea>Plaza guztia jende alferrez betea zegoela.</adibidea>
+                    <adibidea>Gaztaro alferrak dakarke zahartzaro landerra.</adibidea>
+                    <adibidea>Alferrak izutzen dituen egitekoa.</adibidea>
+                    <adibidea>Alferraren soroa belarra eta oloa.</adibidea>
+                    <adibidea>Alferrak bi lan.</adibidea>
+                    <adibidea>Oso alferra zen.</adibidea>
+                </adibideak>
+            </adiera>
+            <adiera>
+                <kategoriak>
+                    <kategoria>adlag.</kategoria>
+                </kategoriak>
+                <definizioa>Alferrik.</definizioa>
+                <adibideak>
+                    <adibidea>Denbora galduz eta alfer iraganez.</adibidea>
+                </adibideak>
+            </adiera>
+        </adierak>
+    </sarrera>
+</hiztegia>

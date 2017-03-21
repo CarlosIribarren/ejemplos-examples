@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<lanGenerikoak xmlns:DEA1="http://ji.ehu.es/DEA1">
+  <lana>
+    <kodea>DEA_Arik1</kodea>
+    <deskribapena>Lista estekatuak (ariketa)</deskribapena>
+    <aurreikusitakoOrduak>3</aurreikusitakoOrduak>
+    <ustiapenean>true</ustiapenean>
+    <lanMota>ariketa</lanMota>
+  </lana>
+  <lana>
+    <kodea>DEA_Arik2</kodea>
+    <deskribapena>SADA</deskribapena>
+    <aurreikusitakoOrduak>1</aurreikusitakoOrduak>
+    <ustiapenean>false</ustiapenean>
+    <lanMota>lana</lanMota>
+  </lana>
+</lanGenerikoak>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epostagunea xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/docencia/cuentas/j/jgascon002/Mahaigaina/epostagune.xsd">
+    <mezua data="2013-02-01">
+        <Nork>jgascon002@ikasle.ehu.es</Nork>
+        <Nori>jperez085@ikasle.ehu.es</Nori>
+        <Gaia>SGTA</Gaia>
+        <MezuTestua>Kaixo...</MezuTestua>
+    </mezua>
+    <mezua data="2013-02-02">
+        <Nork>jgascon002@ikasle.ehu.es</Nork>
+        <Nori>jperez085@ikasle.ehu.es</Nori>
+        <Gaia>SGTA</Gaia>
+        <MezuTestua>Kaixo...</MezuTestua>
+    </mezua>
+</epostagunea>
