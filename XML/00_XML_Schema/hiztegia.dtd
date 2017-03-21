@@ -1,0 +1,17 @@
+<!ELEMENT definizioa (#PCDATA)>
+<!ELEMENT adibidea (#PCDATA)>
+<!ELEMENT gerundioa (#PCDATA)>
+<!ELEMENT kategoriak (kategoria)*>
+<!ELEMENT ikus (#PCDATA)>
+<!ATTLIST ikus ref IDREF #REQUIRED >
+<!ELEMENT partizipioa (#PCDATA)>
+<!ELEMENT burua (#PCDATA | moduak)*>
+<!ELEMENT infinitiboa (#PCDATA)>
+<!ELEMENT hiztegia (sarrera)*>
+<!ELEMENT adierak (adiera+)>
+<!ELEMENT sarrera (burua, kategoriak?, adierak)>
+<!ATTLIST sarrera id ID #REQUIRED >
+<!ELEMENT moduak (partizipioa, infinitiboa, gerundioa)>
+<!ELEMENT adibideak (adibidea)*>
+<!ELEMENT adiera (kategoriak?, definizioa, ikus?, adibideak)>
+<!ELEMENT kategoria (#PCDATA)>

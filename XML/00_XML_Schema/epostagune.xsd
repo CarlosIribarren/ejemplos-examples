@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
+<xs:element name="epostagunea">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="mezua" type="mezuaT" minOccurs="0" maxOccurs="unbounded">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+<xs:complexType name="mezuaT" >
+    <xs:sequence>
+        <xs:element name="Nork" type="epostaT" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Nori" type="epostaT" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="CC" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="Gaia" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="MezuTestua" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="data" type="xs:date" use="required"/>
+</xs:complexType>
+    
+<xs:simpleType name="epostaT">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="\c+@\w+(\.\w+)+"/>
+    </xs:restriction>
+</xs:simpleType>
+</xs:schema>
