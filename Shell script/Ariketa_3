@@ -1,0 +1,14 @@
+if [ $# -lt 1 ]
+then
+	echo "errorea:parametroak behar dira."
+fi
+	for i in *
+ 	do
+		if [ -d $i ]
+		then
+			if [ -f $i/$1 ]
+			then
+			head -5 $i/$1>>OSOA
+			fi
+		fi
+	done

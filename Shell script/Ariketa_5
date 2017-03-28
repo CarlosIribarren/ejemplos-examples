@@ -1,0 +1,17 @@
+if [ $# -eq 0 ]
+then
+	for i in *
+	do
+		if [ -d $i ]
+		then
+			echo "azpikatalogoa:$i"
+			for j in $i/*
+			do
+				if [ -d $j ]
+				then
+					echo "$i-ren azpikatalogoa $j"
+				fi
+			done
+		fi
+	done
+fi
