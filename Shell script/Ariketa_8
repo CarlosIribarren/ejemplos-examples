@@ -1,0 +1,17 @@
+for j in $*
+for i in *
+do
+	if [ -d $i ]
+	then
+	 	for a in $i/*.$j
+		do
+		if [ -f $a ]
+		then
+          	tail -2 $a>>doc/taldeak/$j 
+		fi
+		done
+	fi
+done
+done
+
+

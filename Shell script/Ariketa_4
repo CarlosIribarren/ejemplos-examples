@@ -1,0 +1,9 @@
+if [ $# -lt 2 ]
+then
+echo "errorea: 2 parametro behar dira "
+else
+if [ -f doc/$1 ]
+then
+head -3 doc/$1 >> $2
+fi
+fi
