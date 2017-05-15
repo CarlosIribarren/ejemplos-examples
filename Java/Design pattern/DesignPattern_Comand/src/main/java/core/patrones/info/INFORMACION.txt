@@ -1,0 +1,54 @@
+***************************************************************************************************************************************
+*************************************** El patron Comando
+
+
+	1.- Descripcion del contexto y del escenario:
+	---------------------------------------------
+
+El contexto a implementar se desarrolla en torno a las bicicletas como eje central para el escenario y el problema, 
+todo en funcion de poder adaptar el patron a un problema particular.
+
+El escenario planteado se construye a partir de la conducion de una bicicleta. 
+Dentro de la conduccion de una bicicleta, en algunos casos, es necesario realizar el ajuste de los cambios, 
+con el fin de superar diferentes terrenos y situaciones como obstaculos en carretera, terrenos inestables, najadas, etc.
+
+	2. Problema:
+	------------
+
+Como podria un usuario conduciendo una bicicleta, ejecutar los cambios sin conocer que sucede en los engranajes internos, 
+teniendo conocimiento unicamente de una operacion especifica?
+
+	3.- El patron Comando:
+	----------------------
+
+Este patron de conportamiento cumple con la caracteristica de encapsular un mensaje como un objeto, epecificar un forma simple de separar la ejecucion de un comando, del entorno que genero dicho comando.
+Ademas, permite solicitar una operacion a un objeto sin conocer el contenido ni el receptor real de la misma.
+
+Este patron suele establecer en escenarios donde se necesite encapsular una peticion dentro de un objeto, 
+permitiendo parametrizar a los clientes con distintas peticiones, encolarlas, guardarlas en un registro de sucesos o implementar un mecanismo de deshacer/repetir.
+
+Este patron permite solicitar una operacion a un objeto sin conocer realmente el contenido de esta operacion, ni el receptor de la misma. 
+Para ello se encapsula la peticion como un objeto, con lo que ademas facilita la parametrizacion de los metodos.
+
+	4.- Participantes y colaboraciones:
+	-----------------------------------
+	
+- El usuario crea un objeto ComandoConcreto y especifica su receptor.
+- Un objeto Invocador almacena el objeto ComandoConcreto.
+- El invocador envia una peticion llamando a Ejecutar sobre el comando.
+- El objeto ComandoConcreto invoca operaciones de su receptor para llevar a cabo la peticion.
+
+	5.- Consecuencias:
+	------------------
+	
+- Comando desacopla el objeto que invoca la operacion del que sabe realizarla.
+- Los comando son objetos que pueden ser manipulados y extendidos como cualquier otro objeto.
+- Se pueden crear comando compuestos, que son una instancia del patron Composite.
+- Es sencillo añadir nuevos comandos, ya que no hay que cambiar clases existentes.
+	
+	6.- Conclusiones:
+	-----------------
+	
+- Cabe resaltar durante el uso del patron el hecho de que gracias a su implementacion se desacopla el objeto que invoca la operacion de aquel que tiene el conocimiento para hacerla, lo cual genera flexibilidad.
+- Es bastante comun encontrase con el patron comando aplicado a menus donde la operacion a ejecutarse esta definida en otra parte del programa, y simplemente se le hace un llamado al comando.
+- El patron comando se relaciona con muchos patrones de diseño, como el metodo fabrica, el interprete, el metodo plantilla, entre otros.
