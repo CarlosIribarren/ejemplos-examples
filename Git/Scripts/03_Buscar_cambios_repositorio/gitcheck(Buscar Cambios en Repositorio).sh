@@ -3,6 +3,9 @@
 # Para que la ventana se ejecute con un tamaño especifico
 echo -ne "\e[8;50;150t"
 
+cd e:
+cd ZERGA
+
 ## Lista todos los repositorios que tengan commits por descargar del repositorio del servidor.
 ## Busca todos los repositorios en todas las sub-carpetas
 

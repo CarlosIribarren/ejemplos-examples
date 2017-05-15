@@ -3,6 +3,9 @@
 # Para que la ventana se ejecute con un tamaño especifico
 echo -ne "\e[8;50;170t"
 
+cd e:
+cd ZERGA
+
 ## Lista todos los repositorios que tengan cambios sin comitear.
 ## Se entienden cambios sin comitear como, proyectos que tengas ficheros modificados y ficheros sin seguimiento.
 ## Busca todos los repositorios en todas las sub-carpetas.
