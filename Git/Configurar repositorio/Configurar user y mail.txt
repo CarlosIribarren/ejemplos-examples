@@ -1,0 +1,8 @@
+**********************************************************************
+******** Configurar USER y MAIL para un respositorio en concreto *****
+**********************************************************************
+
+	git config --local user.name "Carlos Iribarren"
+	
+	git config --local user.email iribarrenzubizarreta@gmail.com
+
