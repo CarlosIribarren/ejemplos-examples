@@ -1,9 +1,12 @@
+
 import java.util.regex.Pattern;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import Matricula;
+import org.springframework.util.StringUtils;
+
 
 public class MatriculaValidator implements ConstraintValidator<Matricula, String> {
 
@@ -28,6 +31,9 @@ public class MatriculaValidator implements ConstraintValidator<Matricula, String
   // Expresiones regular para matriculas tipo [B-9999-KT, B 9999 KT, B9999KT]
   private static final String EXP_B_9999_KT = "[A-Z]{1}[0-9]{4}[A-Z]{2}|[A-Z]{1} [0-9]{4} [A-Z]{2}|[A-Z]{1}-[0-9]{4}-[A-Z]{2}";
 
+  // Expresiones regular para matriculas tipo [SS-1171-AP, SS 1171 AP, SS1171AP]
+  private static final String EXP_SS_1171_AP = "[A-Z]{2}-[0-9]{4}-[A-Z]{2}|[A-Z]{2} [0-9]{4} [A-Z]{2}|[A-Z]{2}[0-9]{4}[A-Z]{2}";
+
   // ************ Matriculas de 2000 en adelante ************
   // ********************************************************
 
@@ -42,24 +48,29 @@ public class MatriculaValidator implements ConstraintValidator<Matricula, String
   @Override
   public boolean isValid(final String value, final ConstraintValidatorContext constraintValidatorContext) {
 
-    // Definir variable para validar
+    // Si es vacio no se valida
+    if (!StringUtils.hasText(value)) {
+      return true;
+    }
+
+    // Variable resultado
     Boolean isMatriculaValid = Boolean.FALSE;
 
-    if (value != null) {
-      // Validar matricula
-      if (Pattern.matches(EXP_9999_BBB, value)) {
-        isMatriculaValid = Boolean.TRUE;
-      } else if (Pattern.matches(EXP_B_9999_KT, value)) {
-        isMatriculaValid = Boolean.TRUE;
-      } else if (Pattern.matches(EXP_AB_1134_D, value)) {
-        isMatriculaValid = Boolean.TRUE;
-      } else if (Pattern.matches(EXP_Z_103688, value)) {
-        isMatriculaValid = Boolean.TRUE;
-      } else if (Pattern.matches(EXP_L_62593, value)) {
-        isMatriculaValid = Boolean.TRUE;
-      } else if (Pattern.matches(EXP_BI_51452, value)) {
-        isMatriculaValid = Boolean.TRUE;
-      }
+    // Validar matricula
+    if (Pattern.matches(EXP_9999_BBB, value)) {
+      isMatriculaValid = Boolean.TRUE;
+    } else if (Pattern.matches(EXP_SS_1171_AP, value)) {
+      isMatriculaValid = Boolean.TRUE;
+    } else if (Pattern.matches(EXP_B_9999_KT, value)) {
+      isMatriculaValid = Boolean.TRUE;
+    } else if (Pattern.matches(EXP_AB_1134_D, value)) {
+      isMatriculaValid = Boolean.TRUE;
+    } else if (Pattern.matches(EXP_Z_103688, value)) {
+      isMatriculaValid = Boolean.TRUE;
+    } else if (Pattern.matches(EXP_L_62593, value)) {
+      isMatriculaValid = Boolean.TRUE;
+    } else if (Pattern.matches(EXP_BI_51452, value)) {
+      isMatriculaValid = Boolean.TRUE;
     }
 
     // Retornar resultado de la validacion
