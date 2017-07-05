@@ -1,8 +1,0 @@
-for i in *
-do
-if [ -d $i ] 
-then
-echo "azpi_katalogoa : $i/"
-fi
-done
-
