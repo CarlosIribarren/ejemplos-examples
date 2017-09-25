@@ -1,0 +1,21 @@
+COMO BUSCA LOS FICHEROS DE CONFIGURACION CON EL SIGUIENTE ORDEN
+
+1.- hibernate.properties
+2.- hibernate.cfg.xml
+3.- a mano
+
+
+
+
+
+ESTRUCTURA DE DIRECTORIOS
+
+	- /lib : librerias
+	- src : ficheros de configuracion de hibernate
+	- com.innova4b.empresaReparto.persistent : 
+	- com.innova4b.empresaReparto.trans : 
+	- com.resources.com.innova4b.empresaReparto.persistent : 
+	
+	
+El fichero de hibernate.properties no lo usamos!!!
+El sistema es el que utiliza el fichero de hibernate.properties

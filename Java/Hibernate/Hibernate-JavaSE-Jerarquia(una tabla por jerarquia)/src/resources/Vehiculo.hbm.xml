@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+		
+<hibernate_mapping package = "com.innova4b.empresaReparto.persistent">
+
+<!-- ------------------------------ -->
+<!-- Jerarquia(una tabla por jerarquia) -->
+<!-- ------------------------------ -->
+
+	<!-- MAPEAR CLASE CON TABLA -->
+	<!-- clase primcipal -->
+	<class name="Vehiculo" table="vehiculo" >
+		<discriminator column="tipoVehiculo" type="string"/>
+	
+		<id name="idVehiculo" column="idVehiculo">
+			<generator class="increment"></generator>
+		</id>
+	
+		<property name="matricula"></property>
+		
+		<property name="numeroPlaza"></property>
+		
+		<!-- Subclase -->
+		<!-- Definimos el valor discriminator para diferenciar -->
+		<subclass name="Camion" discriminator-value="CA">
+			<property name="tara"></property>
+		</subclass>
+		
+		<!-- Subclase -->
+		
+		
+	</class>
+	
+	
+
+</hibernate_mapping>
