@@ -1,0 +1,36 @@
+********************************************************************************
+*********** 10_Conversor_Fechas_Spring *****************************************
+********************************************************************************
+
+1.- Se define en el fichero de literales los dos (euskera y castellano) patrones que se van a utilizar:
+-------------------------------------------------------------------------------------------------------
+
+	Castellano
+	===========
+		format.date.short = DD/MM/YYYY
+		
+	Euskera
+	=======
+		format.date.short = YYYY/MM/DD
+
+
+2.- Se registra para cada peticion el conversor correspondiente. Se ejecuta en cada peticion.
+-----------------------------------------------------------------------------------------------
+
+
+	@ControllerAdvice
+	public class ApplicationControllerAdvice {
+
+		@Autowired
+		private MessageSource messageSource;
+
+		@InitBinder
+		public void initBinder(WebDataBinder binder, Locale locale) {
+			String format = this.messageSource.getMessage("format.date.short", null, locale);
+			SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+			binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+			 
+		}
+		
+
+	}
