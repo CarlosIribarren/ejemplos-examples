@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" src="Dependencias\bootstrap.min.css">
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="Dependencias\jquery-3.1.1.slim.min.js"></script>
+    <script src="Dependencias\tether.min.js"></script>
+    <script src="Dependencias\bootstrap.min.js"></script>
+    
+    <!-- Bootstrap Datetimepicker -->
+    <script src="Dependencias\moment.min.js"></script>
+    <script src="Dependencias\locales_es_eu.min.js"></script>
+    <script src="Dependencias\bootstrap-datetimepicker.min.js"></script>
+
+  </head>
+  <body>
+
+    <!-- Euskera -->
+    <input size='16' type='text' value='2003-02-01' class='form_datetime'/>
+
+    <!-- Castellano -->
+    <input size='16' type='text' value='01-02-2003' class='form_datetime'/>
+
+    <script type="text/javascript">
+      $(function() {
+          $('.form_datetime').datetimepicker({
+              locale: 'eu',
+              format : 'YYYY/MM/DD'
+          });
+      });
+    </script>    
+
+    <!-- NOTA: 
+      
+        Si se utiliza el locale de Euskera(eu):
+        ======================================
+      
+            $('.form_datetime').datetimepicker({
+                locale: 'eu'
+            });
+      
+        el value del imput tiene que tener en el formato 'YYYY/MM/DD', para que reconozca la fecha correctamente.
+
+            <input size='16' type='text' value='2003-02-01' class='form_datetime'/>
+
+        Si el value de input tiene el formato de 'YYYY/MM/DD':
+        ======================================================
+
+            <input size='16' type='text' value='2003-02-01' class='form_datetime'/>
+        
+        entonces se puede especificar en el jQuery que visualize en dicho formato:
+    
+            $('.form_datetime').datetimepicker({
+                format : 'YYYY/MM/DD'
+            });
+
+
+      *****************************************************************************************************************
+      CONCLUSION: Tiene que coincidir el idioma + con el formato de entrada del dato + con el formato de visualizacion 
+      *****************************************************************************************************************
+          
+    -->
+
+
+  </body>
+</html>
