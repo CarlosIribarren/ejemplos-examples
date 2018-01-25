@@ -1,1 +1,0 @@
-  var declarante = $('#idDeclarante').select2('data')[0].text;

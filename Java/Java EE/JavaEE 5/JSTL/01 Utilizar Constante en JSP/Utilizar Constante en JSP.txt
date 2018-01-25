@@ -1,0 +1,8 @@
+<%-- Definir Constante --%>
+
+	<%@page import="net.izfe.g210.hgfzergabideaweb.security.ZergabideaFormUserDetailsService"%>
+	<c:set var="numIntentos" value="<%=ZergabideaFormUserDetailsService.NUM_INTENTOS%>"/>
+
+<%-- Utilizar Constante --%>
+
+	${numIntentos}

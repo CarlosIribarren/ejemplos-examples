@@ -1,0 +1,50 @@
+div#parte_arriba{
+	background-color:red;
+	height:150px;
+
+}
+div#baner{
+	background-color:greenyellow;
+}
+div#logo{
+	background-color:gray;
+	float:left;
+	margin-left:10%;
+
+}
+div#logo img{
+	width: 100px; height:100px;
+}
+
+div#titulo{
+	background-color:blue;
+	margin-left:10%;
+	margin-right:10%;
+}
+header{
+	background-color:brown;
+
+}
+
+nav{
+	background-color:yellowgreen;
+}
+div#parte_izquierda{
+	background-color:gray;
+	width:15%;
+	height:100%;
+	float:left;
+}
+section{
+	background-color:aliceblue;
+	margin-left:18%;
+}
+article{
+	background-color:blue;
+}
+
+footer{
+	background-color:red;
+	width:100%;
+	clear:both;
+}

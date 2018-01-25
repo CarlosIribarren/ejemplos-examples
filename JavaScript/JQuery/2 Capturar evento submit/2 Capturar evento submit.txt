@@ -1,0 +1,6 @@
+  $('#nombreFormulario').submit(function() {
+    
+    alert($('#fechaInicio').val());
+    alert($('#fechaVencimiento').val());
+	
+  });
