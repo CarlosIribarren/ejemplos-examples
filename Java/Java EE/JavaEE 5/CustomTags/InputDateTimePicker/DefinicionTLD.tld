@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+		version="2.0">
+
+	<description>Libreria de Tags</description>
+	<tlib-version>3.0</tlib-version>
+	<short-name>tagCarlos</short-name>
+	<uri>tagCarlosUri</uri>
+
+   <tag>
+        <description>Input de DateTimePicker</description>
+        <name>inputDateTimePicker</name>  
+        <tag-class>net.izfe.g210.hgfzergabideacomunweblib.web.tags.InputDateTimePicker</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+          <name>path</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>  
+        <attribute>
+          <name>id</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>             
+        <attribute>
+          <name>cssClass</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>   
+        <attribute>
+          <name>readOnly</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>           
+    </tag>      
+  
+</taglib>
