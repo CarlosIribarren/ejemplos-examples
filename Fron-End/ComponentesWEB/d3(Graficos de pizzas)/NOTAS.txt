@@ -1,0 +1,37 @@
+**************************************************************
+******************* d3 ***************************************
+**************************************************************
+
+LA LIBRERIA DE D3 ESTA PERSONALIZADA PAR QUE SALGAN COMO MAXIMO 6 OPCIONES Y COLORES
+
+Ejemplo:
+========
+
+	Datos para alimentar el grafico:
+	--------------------------------
+	Se le pasa como parametro un json de tipo:
+		
+		[{"name":"Hombre","value":4},{"name":"Mujer","value":3},{"name":"Otros","value":3}]
+		
+	HTML:
+	-----
+	
+		<div id="chartEdad" class="col-md-12" style="height: 270px;">
+			<h5 class="underline center">
+				<fmt:message key="action.result.presential.perAge" />
+			</h5>
+		</div>
+		
+	JS:
+	---
+	
+	if ($("#chartEdad").length && '${action.pieChartEdad}') {
+		PieChart().loadChart(JSON.parse('${action.pieChartEdad}'),"#chartEdad");
+	}
+		
+			
+	
+	
+	
+	
+	

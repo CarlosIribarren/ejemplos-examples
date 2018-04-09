@@ -1,0 +1,555 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Replicate">
+<meta name="author" content="EuroHelp">
+<meta name="Title"
+	content="Perfil usuario intranet Participación Ciudadana">
+<link rel="shortcut icon" href="/PARCIU-ClienteWeb-INTRANET/resources/favicon.ico">
+<title>Perfil usuario intranet Participación Ciudadana</title>
+<!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/83300ff64f.js"></script>
+     
+<!-- Bootstrap core CSS -->
+<link href="/PARCIU-ClienteWeb-INTRANET/resources/assets/bts3/css/bootstrap.css" rel="stylesheet"> 
+
+ <!-- Custom styles for this template -->
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+ <script type="text/javascript" src="/PARCIU-ClienteWeb-INTRANET/resources/assets/bts3/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/font-awesome-4.7.0/css/font-awesome.css">
+<!-- Date Picker -->
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/bootstrap-datepicker-1.6.4/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/bootstrap-datepicker-1.6.4/css/bootstrap-datepicker3.min.css">
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/bootstrap-datetimepicker-4.17.47/css/bootstrap-datetimepicker.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+ 
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/bts3/css/bootstrap.min.css" />
+
+<!--DataTables-->
+<link rel="stylesheet"	href="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/dataTables/media/css/jquery.dataTables.min.css" />
+<link rel="stylesheet"	href="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/dataTables/extensions/Responsive/css/responsive.dataTables.min.css" />
+
+<!-- Custom styles EuroHelp -->
+
+<link href="/PARCIU-ClienteWeb-INTRANET/resources/assets/css/styles-intranet.css" rel="stylesheet">
+<link href="/PARCIU-ClienteWeb-INTRANET/resources/assets/css/font-color-intranet.css" rel="stylesheet">
+<link href="/PARCIU-ClienteWeb-INTRANET/resources/assets/css/media-queries-intranet.css" rel="stylesheet">
+
+
+<link href="/PARCIU-ClienteWeb-INTRANET/resources/assets/css/nv.d3.css" rel="stylesheet">
+
+<!-- Sortable -->
+<link href="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/Sortable/Sortable.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/fileUpload/jquery.fileupload.css">
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/css/fileupload.css">
+
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/selectize/selectize.css">
+
+<link rel="stylesheet" href="/PARCIU-ClienteWeb-INTRANET/resources/assets/css/estilos-intranet.css"> 
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-spy="scroll" data-offset="0" data-target="#navbar-main">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+	<!--MENU SUPERIOR QUE SE CARGA EN RESOLUCIONES MENORES ESCONDIENDO EL LATERAL-->
+	<nav class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle pull-left"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse"
+				aria-expanded="false" style="">
+				<ul class="nav navbar-nav">
+					
+					<li ><a
+						title="Procesos participativos"
+						href="/PARCIU-ClienteWeb-INTRANET/processes">Procesos participativos</a></li>
+
+					
+					
+					<li ><a
+						title="Ciudadanía"
+						href="/PARCIU-ClienteWeb-INTRANET/citizenship/registered">Ciudadanía</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+	<!--FIN || MENU SUPERIOR QUE SE CARGA EN RESOLUCIONES MENORES ESCONDIENDO EL LATERAL-->
+	
+	<!--PARTE DERECHA DE LA APLICACION-->
+	<div class="affix" id="contenedor_derecha">
+		<div class="row">
+			<div class=" col-md-6">
+
+				<img
+					src="/PARCIU-ClienteWeb-INTRANET/resources/assets/img/logo-dk.png"
+					class="icono_apit" alt="">
+				<h1 class="cabecera">Partaidetza</h1>
+
+			</div>
+			<script type="text/javascript">
+				window.onload = function(){
+					var loc = new Language("es_ES");
+					$('[data-toggle="tooltip"]').tooltip()
+				}
+				var ctx = "/PARCIU-ClienteWeb-INTRANET";
+			</script>
+
+
+
+			<div class="pull-right menu-right col-md-6">
+				<span class="pull-right" id="language"> 
+						
+						
+						
+						
+						
+							<span class="label label-default">es</span>
+						
+						
+						 | 
+					
+						
+						
+						
+						
+						
+						
+							<a href="http://localhost:8080/PARCIU-ClienteWeb-INTRANET/process/1/action/82/results/preview?lang=eu_ES"
+								onclick="loc.changeLanguage('http://localhost:8080/PARCIU-ClienteWeb-INTRANET/process/1/action/82/results/preview?lang=eu_ES','eu_ES')">eu</a>
+						
+						
+					
+				</span> <a href="/PARCIU-ClienteWeb-INTRANET/logout"
+					class=" btn-sm boton_salir boton_menu pull-right" type="button">
+					<i class="fa fa-sign-out" aria-hidden="true"></i> Salir
+				</a>
+
+				<span id="user-data" class="pull-right"><b>Usuario:</b> KANEUR018
+				</span>
+			</div>
+		</div>
+
+	</div>
+</header>
+<nav id="menu" role="navigationnavbar navbar-inverse navbar-static-top">
+	<ul class="nav nav-list">
+		
+			
+		
+		<li class='active'><a
+			title="Procesos participativos"
+			href="/PARCIU-ClienteWeb-INTRANET/processes">Procesos participativos</a></li>
+
+		
+		
+		<li ><a title="Ciudadanía"
+			href="/PARCIU-ClienteWeb-INTRANET/citizenship/registered">Ciudadanía</a></li>
+	</ul>
+</nav>
+	<div id="content" class="row-fluid hidden-content">
+		<main class="" id="main">
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+<div class="titulo_proceso"><i class="fa fa-file-text" aria-hidden="true"></i>Tambor de Oro</div>
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+	
+	<li ><a
+		href="/PARCIU-ClienteWeb-INTRANET/process/1/info"
+		role="tab">Inform. general</a></li>
+
+	
+	
+	
+	<li ><a
+		href="/PARCIU-ClienteWeb-INTRANET/process/1/phases"
+		role="tab">Fases</a></li>
+
+
+	
+	
+		
+	
+	<li class='active'><a
+		href="/PARCIU-ClienteWeb-INTRANET/process/1/phase/0/actions "
+		role="tab">Acciones</a></li>
+
+	
+	
+	<li ><a
+		href="/PARCIU-ClienteWeb-INTRANET/process/1/results"
+		role="tab">Resultados</a></li>
+	
+	
+	<li ><a
+		href="/PARCIU-ClienteWeb-INTRANET/process/1/publications"
+		role="tab">Publicación web</a></li>
+	
+
+</ul>
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tab-content">
+	<section class="container active" id="informgeneral">
+		<section class="col-md-12">
+			<div class="row top-back">
+				<div class="col-md-6 pull-left">
+					<a title="Volver al resultado"
+						class="back" href="/PARCIU-ClienteWeb-INTRANET/process/1/action/82/results"><img alt=""
+						src="/PARCIU-ClienteWeb-INTRANET/resources/assets/img/back-arrow.png">
+					Volver</a>
+				</div>
+			</div>
+			<h2 class="underline"></h2>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>
+						Resultados - Encuentros presenciales
+					</h3>
+					<h4>
+						Qué se persigue
+					</h4>
+					<div></div>
+					<h4>
+						Resultado
+					</h4>
+					<div></div>
+					<p class="note">
+						<strong>Total Participantes:</strong>
+						10 
+						
+						
+						
+					</p>
+					
+						
+							
+
+
+						
+							<div class="row margintop20">
+								<div id="chart1" class="col-md-12" style="height: 270px;">
+									<h5 class="underline center">
+										Por género
+									</h5>
+								</div>
+
+								<div id="chartEdad" class="col-md-12" style="height: 270px;">
+									<h5 class="underline center">
+										Por edad
+									</h5>
+								</div>		
+								
+
+								<div id="chartBarrio" class="col-md-12" style="height: 270px;">
+									<h5 class="underline center">
+										Por barrio
+									</h5>
+								</div>									
+								
+								<div id="chart2" class="col-md-12 col-xs-12" style="height: 270px;">
+								
+									<h5 class="underline center">
+								
+									
+								
+									</h5>
+								
+								</div>
+								
+					
+		
+		
+								<!-- FIXME: Faltan añadir los adjuntos-->
+							</div>
+
+							
+						
+				</div>
+			</div>
+		</section>
+	</section>
+</div>
+
+
+		</main>
+	</div>
+	
+
+
+<footer>
+	<div class="row-fluid">
+		<!-- PIE PAGINA -->
+
+		<div class="pie">
+			<div class="col-md-5 pie_izquierda pull-left">
+				<small> © Donostiako Udala - Ayuntamiento de Donostia-San
+					Sebastián <br/> Ijentea 1, 20003 Donostia-San Sebastián.
+					(+34) 943 481000
+				</small>
+
+			</div>
+			<div class="col-md-2 logo_central text-center"></div>
+			<div class="col-md-5 pie_derecha text-right">cidXXX</div>
+
+			<!-- FIN || PIE PAGINA -->
+
+		</div>
+	</div>
+	<!--/row-fluid-->
+</footer>
+
+	
+
+
+<!-- JQuery -->
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/jquery/jquery-3.2.1.js"></script>
+
+<!--DataTables-->
+
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/dataTables/media/js/jquery.dataTables.min.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/dataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+	
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/dataTables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+	
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/dataTables/extensions/Buttons/js/buttons.html5.min.js"></script>
+
+
+<!-- Bootstrap 3 -->
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/bts3/js/bootstrap.min.js"></script>
+
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/d3.min.js"></script>
+
+
+<!-- Initialize DataTable -->
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/listTable.js"></script>
+
+
+<!-- Language -->
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/language.js"></script>
+
+<!-- Initialize DatePicker -->
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/datePicker.js"></script>
+<!-- Initialize DateTimePicker -->
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/dateTimePicker.js"></script>
+
+
+<!-- Sortable -->
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/Sortable/Sortable.min.js"></script>
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/tags.js"></script>
+
+<!-- validator -->
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/validator.js"></script>
+
+<!-- moment -->
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/moment-with-locales.js"></script>
+
+<!-- ckeditor wysiwyg -->
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/jQueryUI/jquery-ui.min.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/ckeditor/ckeditor.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/wysiwyg.js"></script>
+
+
+<!-- datepicker -->
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/bootstrap-datepicker-1.6.4/js/bootstrap-datepicker.min.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/bootstrap-datepicker-1.6.4/locales/bootstrap-datepicker.es.min.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/bootstrap-datepicker-1.6.4/locales/bootstrap-datepicker.eu.min.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/bootstrap-datetimepicker-4.17.47/js/bootstrap-datetimepicker.js"></script>
+<!-- end datepicker -->
+
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/datePickerWrapper.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/pieChart.js"></script>
+
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script
+	src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script
+	src="https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/fileUpload/jquery.fileupload.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/fileUpload/jquery.fileupload-process.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/fileUpload/jquery.fileupload-image.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/fileUpload/jquery.iframe-transport.js"></script>
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/fileUpload/jquery.ui.widget.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/fileUpload.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/imageUpload.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/dataTable.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/selectize/selectize.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/jQueryValidator/jquery.validate.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/jQueryValidator/additional-methods.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/lib/jQueryValidator/jquery.validate_default.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/jQueryValidator/jquery.validate_es.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/jQueryValidator/jquery.validate_eu.js"></script>
+
+<script type="text/javascript"
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/formValidator.js"></script>
+	
+<script
+	src="/PARCIU-ClienteWeb-INTRANET/resources/assets/js/custom/proposalsDataTable.js"></script>
+	
+	
+
+	
+
+
+<script type="text/javascript">
+window.onload = function() {
+	if ($("#chart2").length && '') {
+		PieChart().loadChart(JSON.parse(''),"#chart2");
+	}
+	if ($("#chart1").length && '[{"name":"Hombre","value":4},{"name":"Mujer","value":3},{"name":"Otros","value":3}]') {
+		PieChart().loadChart(JSON.parse('[{"name":"Hombre","value":4},{"name":"Mujer","value":3},{"name":"Otros","value":3}]'),"#chart1");
+	}
+	if ($("#chartEdad").length && '[{"name":"17-16","value":9},{"name":"64-50","value":1}]') {
+		PieChart().loadChart(JSON.parse('[{"name":"17-16","value":9},{"name":"64-50","value":1}]'),"#chartEdad");
+	}
+	
+	if ($("#chartBarrio").length && '[{"name":"Aiete - Miramon","value":1},{"name":"Altza","value":1},{"name":"Amara Berri / Riberas de Loiola","value":1},{"name":"Amara / Morlans","value":1},{"name":"Añorga","value":1},{"name":"Bidebieta","value":1},{"name":"Egia","value":1},{"name":"Gros","value":1},{"name":"Intxaurrondo","value":1},{"name":"Zubieta","value":1}]') {
+		PieChart().loadChart(JSON.parse('[{"name":"Aiete - Miramon","value":1},{"name":"Altza","value":1},{"name":"Amara Berri / Riberas de Loiola","value":1},{"name":"Amara / Morlans","value":1},{"name":"Añorga","value":1},{"name":"Bidebieta","value":1},{"name":"Egia","value":1},{"name":"Gros","value":1},{"name":"Intxaurrondo","value":1},{"name":"Zubieta","value":1}]'),"#chartBarrio");
+	}
+	
+	  $(window).keydown(function(event){
+	    if(event.keyCode == 13) {
+	      event.preventDefault();
+	      return false;
+	    }
+	  });
+}
+</script>
+</body>
+</html>
