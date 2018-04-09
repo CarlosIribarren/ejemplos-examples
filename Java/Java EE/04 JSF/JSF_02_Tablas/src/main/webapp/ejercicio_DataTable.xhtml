@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+ 
+    <h:head>
+        <title>JSF - Adivinar numero - JUEGO2</title>
+    </h:head>
+    <h:body>
+    	<h3>JSF - Adivinar numero - JUEGO2</h3>
+
+
+	<h:button outcome="insertarPersona" value="Insertar Persona" ></h:button>
+
+	<h:form>
+	    <h:dataTable value="#{personaBean.personas}" var="persona">
+ 
+	 		
+	    			<h:column>
+	    				<!-- column header -->
+	    				<f:facet name="header">Nombre</f:facet>
+	    				<!-- row record -->
+	    				#{persona.nombre}
+	    			</h:column>
+	 
+	    			<h:column>
+	    				<f:facet name="header">Apellido</f:facet>
+	    				#{persona.apellido}
+	    			</h:column>
+	 
+	    			<h:column>
+	    				<f:facet name="header">Eliminar</f:facet>
+	    				<h:commandButton action="#{personaBean.eliminarPersona(persona)}" value="Eliminar" />
+	    			</h:column>
+	 
+	 			
+    		</h:dataTable>
+    </h:form>
+    	
+    	
+    	
+    </h:body>
+</html>

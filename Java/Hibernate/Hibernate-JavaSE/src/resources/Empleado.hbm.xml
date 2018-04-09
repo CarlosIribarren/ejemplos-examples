@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+		
+
+<hibernate-mapping package = "com.innova4b.empresaReparto.persistent">
+
+	<!-- MAPEAR CLASE CON TABLA -->
+	<class name="Empleado" table="Empleado" >
+	
+		<!-- CLAVE PRIMARIA -->
+		<id name="idEmpleado" column="IdEmpleado">
+			<generator class="increment"></generator>
+		</id>
+	
+		<!-- PROPIEDADES-->
+		<property name="nombre"></property>
+		<!-- Es necesario definir el nombre de la columna sino coincide con el nombre de la proiedad -->
+		<property name="fechaNacimiento" type="timestamp" column="fechaNacimiento"></property>
+		
+		
+		<!-- RELACION 1:1 
+		Donde pone column, enlazamos con la clave foranea de la tabla a la unimos 
+		<many-to-one name="coche" class="Coche"column="IdCoche" unique="true" >
+		</many-to-one> -->
+	</class>
+	
+
+</hibernate-mapping>

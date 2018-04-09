@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+		
+<hibernate_mapping package = "com.innova4b.empresaReparto.persistent">
+
+<!-- ------------------------------ -->
+<!-- Jerarquia(una tabla por clase) -->
+<!-- ------------------------------ -->
+
+	<!-- MAPEAR CLASE CON TABLA -->
+	<class name="Vehiculo" table="vehiculo" >
+	
+		<!-- DEFINIR EL ID (ESTO LO PRIMERO) -->
+		<id name="idVehiculo" column="idVehiculo">
+			<generator class="increment"></generator>
+		</id>
+		
+		<!-- PROPIEDADES -->
+		<property name="matricula"></property>
+		<property name="numeroPlaza"></property>
+		
+		<!-- CLASE DE HERENCIA 1 -->
+		<joined-subclass name="Camion" table="CAMION">
+			<!-- Enlazamos con la clase vehiculo -->
+			<key column="idVehiculo"></key>
+			
+			<property name="tara"></property>
+			
+		</joined-subclass>
+		
+		
+		<!-- CLASE DE HERENCIA 2 -->
+		<joined-subclass name="Coche" table="COCHE">
+			<!-- Enlazamos con la clase vehiculo -->
+			<key column="idVehiculo"></key>
+			
+		</joined-subclass>
+	</class>
+	
+	
+
+</hibernate_mapping>
