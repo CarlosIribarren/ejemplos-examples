@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>oiasso.systems.examples</groupId>
+  <artifactId>WS-SOAP-Cliente</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jvnet.jax-ws-commons</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <xdebug>true</xdebug>
+          <sourceDestDir>src/main/java</sourceDestDir>
+          <packageName>oiasso.systems.examples.calculator.soap</packageName>
+          <wsdlUrls>http://www.dneonline.com/calculator.asmx?WSDL</wsdlUrls>
+        </configuration>        
+      </plugin>
+    </plugins>
+  </build>
+</project>
