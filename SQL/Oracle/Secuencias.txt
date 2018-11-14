@@ -1,0 +1,15 @@
+********************************************
+******* Secuencias *************************
+********************************************
+
+1.- Crear secuencia:
+--------------------
+
+	CREATE SEQUENCE nombreTabla_id_secuence  START WITH 1 INCREMENT BY 1 MINVALUE 1 CACHE 20;
+
+	(Se cachean 20 registros para que esten en memoria)
+
+2.- Obtener el siguiente numero de la secuencia:
+------------------------------------------------
+
+	select nombreTabla_id_secuence.nextval from dual;

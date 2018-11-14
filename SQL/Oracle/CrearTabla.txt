@@ -1,0 +1,27 @@
+**************************************************
+********** Crear tabla ***************************
+**************************************************
+
+1.- Crear una tabla:
+--------------------
+
+	CREATE TABLE nombreTabla(
+	    id NUMBER(38, 0) NOT NULL,
+	    year NUMBER(4, 0),
+	    nombre VARCHAR2(255 CHAR)
+	);
+	
+	
+	number(t,d): El parámetro "t" indica el número total de dígitos (contando los decimales) que contendrá el número como máximo (es la precisión). 
+		     Su rango va de 1 a 38. El parámetro "d" indica el máximo de dígitos decimales (escala).
+
+
+2.- Definir clave primaria:
+---------------------------
+
+	ALTER TABLE nombreTabla ADD CONSTRAINT nombreTabla_pkey1 PRIMARY KEY (id);
+
+2.- Crear secuencia para la clave primaria:
+-------------------------------------------
+
+	CREATE SEQUENCE nombreTabla_id_generator START WITH 1 INCREMENT BY 1 MINVALUE 1 CACHE 20;
