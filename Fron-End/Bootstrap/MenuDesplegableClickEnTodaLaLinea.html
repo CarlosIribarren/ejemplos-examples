@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+		
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+
+	<style>
+		.card-header{ 
+			cursor: pointer; 
+		}
+	</style>
+
+	<script>
+	$(document).ready(function(){
+		  $(".card-header").click(function(){
+			  var idCard = $(this).attr("id"); 
+			  $("#" + idCard + "-cursos").collapse('toggle');
+		  });
+		});
+	</script>
+	
+</head>
+<body>
+	
+
+
+	<h5>Paquetes formativos:</h5>
+
+	<div id="cursos">
+
+		<div class="card">
+			<div id="java" class="card-header">
+				Java
+			</div>
+			<div id="java-cursos" class="collapse show" data-parent="#cursos">
+				<div class="card-body">
+					<ul>
+						<li><a class="letra-textos"href="#" >Curso de Java Standard Edition</a></li>
+						<li><a href="#" class="letra-textos">Curso de Java Standard Edition patrones de diseño</a></li>
+						<li><a href="#" class="letra-textos">Curso de Java Standard Edition version 7</a></li>
+						<li><a href="#" class="letra-textos">Curso de Java Standard Edition version 8</a></li>
+						<li><a href="#" class="letra-textos">Curso de Java Enterprise Edition</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div id="spring" class="card-header">
+				Spring framework
+			</div>
+			<div id="spring-cursos" class="collapse" data-parent="#cursos">
+				<div class="card-body">
+					<ul>
+						<li><a href="#" class="letra-textos">Curso de Spring Core</a></li>
+						<li><a href="#" class="letra-textos">Curso de Spring MVC</a></li>
+						<li><a href="#" class="letra-textos">Curso de Spring Data</a></li>
+						<li><a href="#" class="letra-textos">Curso de Spring Batch</a></li>
+						<li><a href="#" class="letra-textos">Curso de Spring Test</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="card">
+			<div id="qa" class="card-header">
+				QA Tester
+			</div>
+			<div id="qa-cursos" class="collapse" data-parent="#cursos">
+				<div class="card-body">
+					<ul>
+						<li><a href="#" class="letra-textos">Curso de Junit</a></li>
+						<li><a href="#" class="letra-textos">Curso de Mockito</a></li>
+						<li><a href="#" class="letra-textos">Curso de Gherkin</a></li>
+						<li><a href="#" class="letra-textos">Curso de Selenium</a></li>
+						<li><a href="#" class="letra-textos">Curso de Cucumber</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div id="ic" class="card-header">
+				IC
+			</div>
+			<div id="ic-cursos" class="collapse" data-parent="#cursos">
+				<div class="card-body">
+					<ul>
+						<li><a href="#" class="letra-textos">Curso de Integración continua</a></li>
+						<li><a href="#" class="letra-textos">Curso de Jenkins</a></li>
+						<li><a href="#" class="letra-textos">Curso de Maven</a></li>
+						<li><a href="#" class="letra-textos">Curso de Sonnar</a></li>
+						<li><a href="#" class="letra-textos">Curso de Gitlab</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div id="scm" class="card-header">
+				SCM
+			</div>
+			<div id="scm-cursos" class="collapse" data-parent="#cursos">
+				<div class="card-body">
+					<ul>
+						<li><a href="#" class="letra-textos">Curso de Svn</a></li>
+						<li><a href="#" class="letra-textos">Curso de Git basico</a></li>
+						<li><a href="#" class="letra-textos">Curso de Git avanzado</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div id="varios" class="card-header">
+				Varios
+			</div>
+			<div id="varios-cursos" class="collapse" data-parent="#cursos">
+				<div class="card-body">
+					<ul>
+						<li><a href="#" class="letra-textos">Curso de Bootstrap</a></li>
+						<li><a href="#" class="letra-textos">Curso de Apache Tomcat</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
