@@ -1,0 +1,45 @@
+Al poner la anotacion 
+
+	@RepositoryRestResource(collectionResourceRel = "personas", path = "personas")
+	
+	- path: Se define la ruta para llamar a los metodos.
+	- collectionResourceRel: Se define el nombre con el que se retornan los resultados en JSON. 
+							 Es decir los resultados vienen en la etiqueta que se define aqui
+	
+	
+	
+Por defecto no Id no se exponen (vienen) en la respuesta, si queremos que se manden los Id, hay que poner el siguiente codigo:
+
+	@Component
+	public class ExposeEntityIdRestMvcConfiguration extends RepositoryRestConfigurerAdapter {
+	
+	  @Override
+	  public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+	    config.exposeIdsFor(Book.class);
+	  }
+	}
+	
+Se crean servicios REST del repositorio AUTOMATICAMENTE
+
+
+********************************************************
+************ Ejemplos de llamadas a la API: ************
+********************************************************
+
+
+Busqueda paginada:
+------------------
+	http://localhost:8081/api/personas?page=0&size=2&sort=asc
+
+Mostrar los servicios de busqueda:
+----------------------------------
+	http://localhost:8081/api/personas/search
+
+Busqueda entre dos fechas paginada:
+-----------------------------------
+
+http://localhost:8081/api/personas/search/findByFechaBetween?inicio=2000-01-01&fin=2015-01-01&page=0&size=5&sort=id,asc
+
+Buscar entre dos Ids:
+---------------------
+	http://localhost:8081/api/personas/search/findByIdBetween?inicio=1&fin=3
