@@ -1,0 +1,15 @@
+
+Cuando se trabaja con ficheros JSP, hay que empaquetar el proyecto como WAR.
+Los ficheros JSP tiene que ir bajo la carpeta de WEB-INF, ya la carpeta WEB-INF esta protegida al acceso. Es un tema de seguridad.
+Cuando el proyecto se empaqueta como un JAR, no se incluye la carpeta de webapp ni la de WEB-INF, entonces los jsp,... no se guardan dentro del JAR.
+Cuando el proyecto se empaqueta como un WAR, SI se incluye la carpeta de webapp y la de WEB-INF, y los jsp estan dentro del WAR.
+
+Para ejecutar el WAR se puede hacer como si fuera un JAR
+
+	java -jar 
+  
+
+
+Please package your application as war and execute as jar. This is documented at spring site.
+Do not use the src/main/webapp directory if your application is packaged as a jar. 
+Although this directory is a common standard, it works only with war packaging, and it is silently ignored by most build tools if you generate a jar.

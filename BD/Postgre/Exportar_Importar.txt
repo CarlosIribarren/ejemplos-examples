@@ -1,0 +1,40 @@
+################################
+POSTGRESQL
+################################
+
+Comando para exportar:
+----------------------
+
+	Comando: pg_dump -U USERNAME DBNAME > dbexport.pgsql
+
+	Ejemplo: pg_dump -U dolphin dolphin > /tmp/export-2020_02_18.sql
+
+
+Comando para importar:
+----------------------
+
+	psql -U dolphin dolphin < export-2020_02_18.sql
+
+	NOTA: El script de la BD tiene la creacion del squema, entonces, para ejecutar el script no tiene que existir el esquema, solo la BD.
+
+################################
+################################
+
+
+1) Primero drop del usuario y el esquema:
+
+	* Esquema: Desde el PgAdmin 3 -> Botón derecho encima del esquema "dolphin" y "Drop cascade"
+	* Usuario: Desde línea de comandos:
+		# su - postgres
+		# psql
+		# drop database dolphin;
+		# drop owned by dolphin;
+		# REASSIGN OWNED BY dolphin TO postgres;
+		# drop user dolphin;
+	
+2) Ahora la creación:
+
+	# create database dolphin;
+	# create user dolphin with password 'dolphin';
+	# set default_tablespace = dolphin;
+	# grant all privileges on database dolphin to dolphin;
