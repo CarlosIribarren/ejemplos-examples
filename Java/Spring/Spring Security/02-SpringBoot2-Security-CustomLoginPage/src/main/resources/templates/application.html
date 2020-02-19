@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title>Welcome to Spring Security Thymeleaf tutorial</title>
+</head>
+<body>
+
+	<h2>Welcome</h2>
+	<div sec:authorize="hasRole('USER')">Text visible to user.</div>
+
+	<!-- Para los roles, Spring security añade automaticamente el prefijo de ROLE_ 
+        	 En realidad el rol se llama sin el prefijo de ROLE_ , (mirar la configuracion)-->
+
+	<div sec:authorize="hasRole('ROLE_ADMIN')">
+		<p>User Has Role Admin</p>
+	</div>
+	<div sec:authorize="hasAuthority('ROLE_ADMIN')">
+		<p>User Has Authority Admin</p>
+	</div>
+
+	<div sec:authorize="isAuthenticated()">
+		<p>Text visible only to authenticated users.</p>
+	</div>
+
+	<fieldset>
+		<legend>Detalles del usuario</legend>
+
+		Authenticated username :
+		<div sec:authentication="name"></div>
+
+		Authenticated user roles :
+		<div sec:authentication="principal.authorities"></div>
+
+	</fieldset>
+
+	<!-- logout -->
+	<span sec:authorize="isAuthenticated()"> <a th:href="@{/logout}">Sign
+			Out</a>
+	</span>
+
+</body>
+</html>
