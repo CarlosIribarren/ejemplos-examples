@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+## JPA
+# Para que JPA no actualize el esquema de la BD cuando cambian las clases de JPA
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none   
+  flyway:
+    enabled: true
+    schemas:
+    - schema_pruebas
+    url: jdbc:postgresql://localhost:5432/db_pruebas
+    user: username_pruebas
+    password: password_pruebas
+
+
+logging:
+  level:
+    root: info
+    org.springframework.security: debug
