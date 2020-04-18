@@ -1,0 +1,19 @@
+CREATE OR REPLACE FUNCTION rellenar_datos() RETURNS TRIGGER AS $rellenar_datos$
+  DECLARE
+  BEGIN
+   
+   NEW.cuadrado := power(NEW.numero,2);
+   NEW.cubo := power(NEW.numero,3);
+   NEW.raiz2 := sqrt(NEW.numero);
+   NEW.raiz3 := cbrt(NEW.numero);   
+
+   RETURN NEW;
+  END;
+$rellenar_datos$ LANGUAGE plpgsql;
+
+
+
+CREATE TRIGGER rellenar_datos 
+	AFTER UPDATE 
+    ON ikf_daily_flight FOR EACH ROW 
+    EXECUTE PROCEDURE rellenar_datos();

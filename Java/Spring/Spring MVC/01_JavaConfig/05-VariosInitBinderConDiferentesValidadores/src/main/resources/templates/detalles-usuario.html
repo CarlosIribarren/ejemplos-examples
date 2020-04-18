@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title>Detalles del usuario</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+	<a th:href="@{/}">Volver</a>
+
+	<!-- Cualquiera que este logeado puede hacer logout -->
+	<span sec:authorize="isAuthenticated()"> 
+		<a th:href="@{/logout}" class="sign-out">SignOut</a>
+	</span>	
+
+	<div class="contenedor">
+
+		<h1>Detalles de mi usuario</h1>
+	
+		<fieldset>
+			<legend>Ejemplos de como preguntar por Roles y privilegios</legend>
+	
+			<div sec:authorize="hasRole('ROLE_USER')">
+				<p>User has Role User</p>
+			</div>
+		
+			<div sec:authorize="hasRole('ROLE_ADMIN')">
+				<p>User has Role Admin</p>
+			</div>
+		
+			<div sec:authorize="hasAuthority('acceso-pantalla-principal')">
+				<p>User has Authority acceso-pantalla-principal</p>
+			</div>
+		
+			<div sec:authorize="hasAuthority('acceso-gestion-usuarios')">
+				<p>User has Authority acceso-gestion-usuarios</p>
+			</div>
+		
+			<div sec:authorize="isAuthenticated()">
+				<p>Text visible only to authenticated.</p>
+			</div>
+	
+		</fieldset>
+	
+		<fieldset>
+			<legend>Detalles del usuario</legend>
+	
+			<h3> Authenticated username : </h3>
+			<ul><li sec:authentication="name"></li></ul>
+	
+			<h3> Authenticated user roles : </h3>
+			<ul>
+			    <li th:each="authority : ${#authentication.getAuthorities()}"
+			       th:text="${authority.getAuthority()}">
+			    </li>
+			</ul>
+	
+	
+		</fieldset>
+
+	</div>
+
+</body>
+</html>

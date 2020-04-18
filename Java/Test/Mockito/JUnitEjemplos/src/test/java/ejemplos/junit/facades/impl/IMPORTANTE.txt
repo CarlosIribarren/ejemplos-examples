@@ -1,0 +1,52 @@
+Para mockear un metodo.
+Existen dos formas de inicializar los test:
+
+	1.- Con el Runner de Mockito:
+	---------------------------
+	
+		@RunWith(MockitoJUnitRunner.class)
+
+
+				@InjectMocks
+				private CocheServiceImpl cocheService;
+
+				@Spy
+				private RestTemplate restTemplate;
+
+
+		Esta forma es buena para cuando se quiere injectar un Mock de RestTemplate en la clase RestTemplate, y cambiarle el comportamiento
+		a algun metodo de la clase RestTemplate (como una llamda)
+		PROBLEMA: Esto funciona cuando en la clase CocheServiceImpl solo tenemos el atributo RestTemplate.
+			  Si en la clase CocheServiceImpl hay mas atributos con la anotacion @Autowired o @Value, es decir que los tiene que levantar Spring,
+			  Esta forma no funciona, ya que mockito solo instancia los Bean que estan marcados como @Spy o @Mock. Por ejemplo si el clase CocheServiceImpl 
+			  tenemos un atributo @Value o @Autowired, en la instancia de CocheServiceImpl tendran un valor null, ya que mockito solo ha instanciado los que le hemos dicho.
+			  Para solucionar esto se podria hacer @Mock o @Spy de las atributos que utilize CocheServiceImpl para que Mockito los instanciase. No es recomendable, ya que en realidad,
+			  puede que queramos que esos atributos tengan un comportamiento normal, es decir, que no sean mock y que esten levantados por Spring. Para esos casos esta la solucion 2 de abajo.
+
+
+	2.-  Con el Runner de Spring:
+	--------------------------- 
+
+		@SpringBootTest 
+		@RunWith(SpringJUnit4ClassRunner.class)
+
+				@Autowired
+				@InjectMocks
+				private CocheServiceImpl cocheService;
+
+				@Autowired
+				@Spy
+				private RestTemplate restTemplate;
+
+				@Before
+				public void initMocks() {
+					MockitoAnnotations.initMocks(this);
+				}
+
+
+		En este caso Spring levanta el contexto con la anotacion @RunWith(SpringJUnit4ClassRunner.class) y cablea todos los Bean que necesita por nosotros, es decir, el comportamiento normal de contexto.
+		Entonces en la clase CocheServiceImpl inicializara TODOS los atributos, como los @Autowired o @Value. Todos estos Bean son Bean normales de Sring. Ninguno es un Mock de Mockito.
+		Y despues con el metodo initMocks y MockitoAnnotations.initMocks(this);, Mockito injectara en la clase CocheServiceImpl los Mock marcados como @Spy o @Mock.
+		Teniendo al final como resultado un clase CocheServiceImpl con un atributo Mock, el restTemplate, y TODOS los demas atributos de las clase CocheServiceImpl Beans inicializados con Sring normalmente.
+		
+
