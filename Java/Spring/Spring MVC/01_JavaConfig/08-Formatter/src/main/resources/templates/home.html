@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title>Home page</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+	
+
+	<div class="contenedor">
+	
+		<h1>Home page</h1>
+	
+		<!-- Solo los usuarios que tengan el privilegio de acceso-gestion-usuarios -->
+		<a th:href="@{/usuarios}">Gestion de usuarios</a>
+
+	</div>
+
+
+
+</body>
+</html>
