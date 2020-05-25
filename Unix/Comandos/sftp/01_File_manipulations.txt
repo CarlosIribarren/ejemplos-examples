@@ -1,0 +1,43 @@
+******************************************
+***** File Manipulations with SFTP *******
+******************************************
+
+Typically, to perform tasks on a remote server you would connect to it via SSH and do your work using the shell terminal. However, in some situations, the user may have only SFTP access to the remote server.
+
+SFTP allows you to perform some basic file manipulation commands. Below are some examples of how to use the SFTP shell:
+
+
+Get information about the remote system’s disk usage:
+-----------------------------------------------------
+
+	df
+
+Create a new directory on the remote server:
+--------------------------------------------
+	mkdir directory_name
+
+Rename a file on the remote server:
+-----------------------------------
+	rename file_name new_file_name
+
+Delete a file on the remote server:
+-----------------------------------
+	rm file_name
+
+Delete a directory on the remote server:
+----------------------------------------
+	rmdir directory_name
+
+Change the permissions of a file on the remote system:
+------------------------------------------------------
+	chmod 644 file_name
+
+Change the owner of a file on the remote system:
+------------------------------------------------
+	chown user_id file_name
+
+You must supply the user ID to the chown and chgrp commands.
+
+Change the group owner of a remote file with:
+---------------------------------------------
+	chgrp group_id file_name

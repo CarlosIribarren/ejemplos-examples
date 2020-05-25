@@ -1,0 +1,3 @@
+Para configurar el arranque automático de estos servicios cuando arranca el sistema operativo hay que ejecutar como usuario ‘root’:
+
+	systemctl enable ReiniciarSistemaTranviaBilbao.service

@@ -1,0 +1,52 @@
+***************************************
+**** Conectar por sftp ****************
+***************************************
+
+formato:	 sftp remote_username@server_ip_or_hostname
+ejemplo:	 sftp root@192.168.240.167
+
+Despues tendremos nos pedira el password.
+
+De esta manera nos conectamos a un maquina y podemos bajar, subir, modificar,....
+
+Nos saldra el pront y es como si estuvieramos en la maquina a la que nos hemos conectado.
+
+sftp>
+
+
+***************************************
+**** Descargar un fichero *************
+***************************************
+
+formato:	 sftp>get filename
+ejemplo:	 sftp>get hola.txt
+
+El fichero se descarga en la path donde nos hemos conectado por sftp
+
+***************************************
+**** Descargar un directorio **********
+***************************************
+
+formato:	 sftp>get -r remote_directory
+ejemplo:	 sftp>get -r scripts
+
+El directorio se descarga en la path donde nos hemos conectado por sftp
+
+
+***************************************
+**** Subir un fichero *****************
+***************************************
+
+formato:	 sftp>put filename
+ejemplo:	 sftp>put hola.txt
+
+El fichero se sube en la path donde nos encontramos (en la maquina que estamos conectados)
+
+***************************************
+**** Subir un directorio **************
+***************************************
+
+formato:	 sftp>put -r locale_directory
+ejemplo:	 sftp>put -r scripts
+
+El fichero se sube en la path donde nos encontramos (en la maquina que estamos conectados)

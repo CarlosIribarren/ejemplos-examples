@@ -1,0 +1,30 @@
+(NOTA: no es recomendable poner el password en los comandos, ya que se queda guardado en el hisotrial de comandos)
+
+*******************************************************************************
+*** Descargar fichero en una linea desde servidor externo *********************
+*******************************************************************************
+
+	formato:	sftp [user]@host[:port][/dest_path/file] [/local_path]
+	ejemplo:	sftp root@192.168.240.167:/root/scripts/kk.txt /root
+
+A continuacion nos pide el password.
+
+*******************************************************************************
+*** Descargar directorio en una linea desde servidor externo *********************
+*******************************************************************************
+
+	formato:	sftp -r [user]@host[:port][/dest_path] [/local_path]
+	ejemplo:	sftp -r root@192.168.240.167:/root/scripts /root
+
+A continuacion nos pide el password.
+
+*******************************************************************************
+*** Subir fichero en una linea a servidor externo *****************************
+*******************************************************************************
+
+	formato:	sftp [user]@host[:port][/dest_path] <<< $'put /local_path/file'
+	ejemplo:	sftp root@192.168.240.167:/root/scripts <<< $'put /root/prueba2.txt'
+
+A continuacion nos pide el password.
+
+Sube el fichero prueba2.txt a maquina 192.168.240.167 en la ubicacion /root/scripts

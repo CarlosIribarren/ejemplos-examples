@@ -1,0 +1,41 @@
+
+**********************************************************************************************
+*** Subir fichero en una linea a servidor externo utilizando SSH con clave publica/privada ***
+**********************************************************************************************
+
+	formato:	sftp -i UBICACION_FICHERO_CLAVE_PRIVADA -R 5 [user]@host[:port][/dest_path] <<< $'put /local_path/file'
+	ejemplo:	sftp -i /root/.ssh/id_rsa -R 5 root@192.168.240.167:/tmp/prueba <<< $'put /root/Captura.PNG'
+
+
+Sube el fichero prueba2.txt a maquina 192.168.240.167 en la ubicacion /root/scripts
+
+El directorio de destino tiene que existir, sino da error.
+
+
+
+**********************************************************************************************
+************************************ Use compression *****************************************
+**********************************************************************************************
+
+opcion: -C
+
+sftp -i /root/.ssh/id_rsa -C root@192.168.240.167:/tmp/prueba <<< $'put /root/Captura.PNG'
+
+
+
+**********************************************************************************************
+************************************ ConnectTimeout ******************************************
+**********************************************************************************************
+
+opcion: -o ConnectTimeout=nn (segundos)
+
+sftp -i /root/.ssh/id_rsa -o ConnectTimeout=1 root@192.168.240.167:/tmp/prueba <<< $'put /root/Captura.PNG'
+
+
+**********************************************************************************************
+************************************ Create a new directory **********************************
+**********************************************************************************************
+
+opcion: mkdir <path>
+
+sftp -i /root/.ssh/id_rsa root@192.168.240.167

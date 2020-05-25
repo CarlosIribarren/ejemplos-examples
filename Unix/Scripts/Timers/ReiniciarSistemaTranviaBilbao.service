@@ -1,0 +1,9 @@
+[Unit]
+Description=Reiniciar Sistema Tranvia Bilbao
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+ExecStart=/bin/bash /root/scripts/ReiniciarSistemaTranviaBilbao.sh
+

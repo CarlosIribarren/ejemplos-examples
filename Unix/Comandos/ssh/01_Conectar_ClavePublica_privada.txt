@@ -1,0 +1,43 @@
+*******************************************************
+***** Ejemplo: Conectar con SSH con clave publica *****
+*******************************************************
+En este ejemplo se muestra como conectar por con SSH desde la maquina1 a la maquina2:
+
+maquina1 -> maquina2
+
+
+1.- Generar un par de llaves en la maquina desde la cual nos queremos conectar (maquina1):
+-------------------------------------------------------------------------------
+	ssh-keygen
+
+IMPORTANTE: La clave privada solo tiene que tener permisos de lectura y escritura del propietario.
+
+2.- Añadir la clave publica a la maquina que nos queremos conectar (maquina2):
+------------------------------------------------------------------------------
+
+ejemplo:	ssh-copy-id -i UBICACION_FICHERO_CLAVE_PUBLICA USUARIO@HOST
+formato:	ssh-copy-id -i /root/.ssh/id_rsa root@192.168.240.167
+
+Con este comando, se conecta a la maquina que nos queremos conectar (maquina2) a traves de ssh normal, es decir, con usuario y contraseña,
+y añade el valor de clave publica en el fichero "/root/.ssh/authorized_keys".
+
+Este paso se podria hacer manualmente añadiendo una clave a mano en ese fichero, sin utilizar el comando "ssh-copy-id".
+
+
+3.- Conectarnos de la maquina utilizando con SSH con clave publica:
+------------------------------------------------------------------------
+
+formato:	ssh -i UBICACION_FICHERO_CLAVE_PRIVADA USUARIO@HOST
+ejemplo:	ssh -i /root/.ssh/id_rsa root@192.168.240.167
+
+De esta manera no se requiere un password a la hora de conectarnos, ya que utiliza las claves publica/privada.
+
+
+
+NOTA: Se podria generar un par de llaves publico/privadas. Luego copiarlas en muchas maquinas (/root/.ssh). Y luego se podria añadir la clave publica en una maquina (servidor central), de tal manera que todas las maquinas donde se han copiado las claves publica/privada tendrian acceso utilizando las mismas claves. (puede ser util para alguna caso muy concreto, no es lo normal)
+
+maquina1 (clave publico/privada) -> **************************************************************
+maquina2 (clave publico/privada) -> *** 							**
+maquina3 (clave publico/privada) -> ***  maquina central (clave publica en "authorized_keys")	**
+maquina4 (clave publico/privada) -> ***								**
+maquina5 (clave publico/privada) -> **************************************************************

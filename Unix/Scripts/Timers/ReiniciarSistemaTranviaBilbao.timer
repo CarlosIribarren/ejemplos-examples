@@ -1,0 +1,8 @@
+[Unit]
+Description=Reiniciar Sistema Tranvia de Bilbao 
+
+[Timer]
+OnCalendar=*:0/1
+
+[Install]
+WantedBy=timers.target

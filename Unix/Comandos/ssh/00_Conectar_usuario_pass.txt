@@ -1,0 +1,5 @@
+
+formato:	ssh USUARIO@HOST
+ejemplo:	ssh root@192.168.240.167
+
+A continuacion nos pide la contraseña
