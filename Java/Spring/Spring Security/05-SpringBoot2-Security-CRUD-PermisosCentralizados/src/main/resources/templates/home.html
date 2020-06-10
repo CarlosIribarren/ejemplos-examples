@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title>Home page</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+	
+
+
+	
+
+	<!-- Cualquiera que este logeado puede hacer logout -->
+	<span sec:authorize="isAuthenticated()"> 
+		<a th:href="@{/logout}" class="sign-out">SignOut</a>
+	</span>
+
+	<div class="contenedor">
+	
+		<h1>Home page</h1>
+	
+		<ul>
+	
+			<!-- Solo los usuarios que tengan el privilegio de acceso-gestion-usuarios -->
+			<li sec:authorize="hasAuthority('acceso-gestion-usuarios')">
+				<a th:href="@{/usuarios}">Gestion de usuarios</a>
+			</li>
+		
+			<!-- Solo los usuarios que tengan el privilegio de acceso-gestion-roles -->
+			<li sec:authorize="hasAuthority('acceso-gestion-roles')">
+				<a th:href="@{/roles}">Gestion de roles</a>
+			</li>		
+		
+			<!-- Cualquiera que este logeado puede ver los detalles de usuario -->
+			<li sec:authorize="isAuthenticated()">
+				<a th:href="@{/mi-usuario_detalles}">Detalles de mi usuario</a>
+			</li>
+
+		</ul>
+
+	</div>
+
+
+
+</body>
+</html>
