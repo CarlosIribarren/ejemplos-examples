@@ -1,0 +1,15 @@
+.tabla {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 75%;
+  margin: auto;
+}
+
+.fila {
+  border: 1px solid #dddddd;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title>Welcome to Spring Security Thymeleaf tutorial</title>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/usuarios.css}"/>
+	
+</head>
+<body>
+
+	<a th:href="@{/}">Volver</a>
+
+	<h1>Gestion de usuarios</h1>
+
+	<table class="tabla">
+		<thead>
+			<tr class="fila">
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Rol</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${usuarios.empty}">
+				<td colspan="2">No hay usuarios </td>
+			</tr>
+			<tr th:each="usuario : ${usuarios}" class="fila">
+				<td><span th:text="${usuario.id}"> </span></td>
+				<td><span th:text="${usuario.nombre}"> </span></td>
+				<td>
+					<ul>
+						<!-- Recorrer los roles -->
+						<li th:each="rol : ${usuario.roles}"
+							th:text="${rol.nombre}">
+						</li>		
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<!-- Cualquiera que este logeado puede hacer logout -->
+	<span sec:authorize="isAuthenticated()"> 
+		<a th:href="@{/logout}">SignOut</a>
+	</span>
+
+</body>
+</html>
