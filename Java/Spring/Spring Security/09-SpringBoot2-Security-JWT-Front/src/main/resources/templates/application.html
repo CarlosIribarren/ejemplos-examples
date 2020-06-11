@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title>Welcome to Spring Security Thymeleaf tutorial</title>
+</head>
+<body>
+
+	<h2>Welcome</h2>
+	<div sec:authorize="hasAuthority('USER')">
+		<p>User Has Authority User</p>
+	</div>
+
+	<div sec:authorize="hasAuthority('ADMIN')">
+		<p>User Has Authority Admin</p>
+	</div>
+
+	<div sec:authorize="isAuthenticated()">
+		<p>Text visible only to authenticated.</p>
+	</div>
+
+	<fieldset>
+		<legend>Detalles del usuario</legend>
+
+		Authenticated username :
+		<div sec:authentication="name"></div>
+
+		Authenticated user roles :
+		<div sec:authentication="principal.authorities"></div>
+
+	</fieldset>
+
+	<!-- logout -->
+	<span sec:authorize="isAuthenticated()"> <a th:href="@{/logout}">Sign
+			Out</a>
+	</span>
+
+</body>
+</html>

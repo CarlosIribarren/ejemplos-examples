@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>890</x>
+      <y>140</y>
+      <w>590</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>Servidor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>190</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>JWTAuthenticationFilter
+
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>340</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>JWTAuthorizationFilter
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>170</y>
+      <w>80</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>Aplicacion
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>190</y>
+      <w>500</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+*(POST) http://localhost:8080/api/login *
+*(BODY) { "username": "admin", "password": "admin"} *</panel_attributes>
+    <additional_attributes>480.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>340</y>
+      <w>500</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+(GET) http://localhost:8080/api/nota/all
+*(HEADER) Authorization:Bearer  eyJhbGciOiJIUzUxMiJ9.eyJpY...*
+</panel_attributes>
+    <additional_attributes>480.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>250</y>
+      <w>500</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+200 OK
+*(HEADER) Authorization:Bearer  eyJhbGciOiJIUzUxMiJ9.eyJpY...*
+</panel_attributes>
+    <additional_attributes>10.0;20.0;480.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>400</y>
+      <w>940</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+[{"id":1,"titulo":"nota 1 Titulo","descripcion":"nota 1 Descripcion"},{"id":2,"titulo":..</panel_attributes>
+    <additional_attributes>10.0;20.0;920.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1350</x>
+      <y>340</y>
+      <w>110</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>NotaController
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>340</y>
+      <w>310</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+(GET) http://localhost:8080/api/nota/all
+</panel_attributes>
+    <additional_attributes>290.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

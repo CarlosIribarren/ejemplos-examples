@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/usuarios.css}"/>
+	
+</head>
+<body>
+
+	<a th:href="@{/usuarios}">Volver</a>
+
+	<!-- Cualquiera que este logeado puede hacer logout -->
+	<span sec:authorize="isAuthenticated()"> 
+		<a th:href="@{/logout}" class="sign-out">SignOut</a>
+	</span>
+
+	<div class="contenedor">
+
+		<h1>Editar usuario</h1>
+
+		<form action="#" th:action="@{${#httpServletRequest.requestURI}}" th:object="${usuarioModificar}" method="post">
+		
+		    <!-- Nombre -->
+		    <label for="nombre">Nombre</label>
+		    <input type="text" th:field="*{nombre}" id="nombre" placeholder="nombre" readonly="readonly">
+		    <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="error"></span>
+		    
+		    <br>
+		    
+		    <!-- Roles -->
+		    <label for="roles">Roles</label>
+		    <select th:field="*{roles}" id="roles" multiple="multiple" >
+		    	
+		    	<!-- Double-bracket syntax, which will automatically apply the Spring Conversion Service. -->
+				<option th:each="rol : ${listadoRoles}" th:value="${{rol}}" th:utext="${rol.nombre}" />
+				
+			</select>
+			<span th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}" class="error"></span>
+			
+			<br>
+			
+			 <input type="submit" value="Add User">   
+		</form>
+	
+	</div>
+
+
+
+</body>
+</html>

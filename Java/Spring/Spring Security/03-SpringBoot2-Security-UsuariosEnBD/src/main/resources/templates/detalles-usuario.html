@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title>Detalles del usuario</title>
+</head>
+<body>
+
+	<a th:href="@{/}">Volver</a>	
+
+	<div sec:authorize="hasRole('ROLE_USER')">
+		<p>User Has Role User</p>
+	</div>
+
+	<div sec:authorize="hasRole('ROLE_ADMIN')">
+		<p>User Has Role Admin</p>
+	</div>
+
+	<div sec:authorize="isAuthenticated()">
+		<p>Text visible only to authenticated.</p>
+	</div>
+
+	<fieldset>
+		<legend>Detalles del usuario</legend>
+
+		Authenticated username :
+		<div sec:authentication="name"></div>
+
+		Authenticated user roles :
+		<div sec:authentication="principal.authorities"></div>
+
+	</fieldset>
+
+	<!-- logout -->
+	<span sec:authorize="isAuthenticated()"> <a th:href="@{/logout}">Sign
+			Out</a>
+	</span>
+
+</body>
+</html>

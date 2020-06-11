@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html lang="EN" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<title>Welcome to Spring Security Thymeleaf tutorial</title>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/tabla.css}"/>
+	
+</head>
+<body>
+
+	<a th:href="@{/}">Volver</a>
+
+	<!-- Cualquiera que este logeado puede hacer logout -->
+	<span sec:authorize="isAuthenticated()"> 
+		<a th:href="@{/logout}" class="sign-out">SignOut</a>
+	</span>
+
+	<div class="contenedor">
+
+		<h1>Gestion de roles</h1>
+
+		<a th:href="@{ ${#httpServletRequest.requestURI} + '/new' }">Nuevo</a>
+	
+		<table class="tabla">
+			<thead>
+				<tr class="fila">
+					<th>Nombre</th>
+					<th>Privilegios</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="rol : ${roles}" class="fila">
+					<td><span th:text="${rol.nombre}"> </span></td>
+					<td>
+						<ul>
+							<!-- Recorrer los roles -->
+							<li th:each="privilegio : ${rol.privilegios}"
+								th:text="${privilegio}">
+							</li>		
+						</ul>
+					</td>
+					<td>
+						<a th:href="@{ ${#httpServletRequest.requestURI} + '/' + ${rol.nombre} }">Editar</a>
+						<a th:href="@{ ${#httpServletRequest.requestURI} + '/' + ${rol.nombre} + '/delete' }">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+	</div>
+
+
+
+</body>
+</html>
