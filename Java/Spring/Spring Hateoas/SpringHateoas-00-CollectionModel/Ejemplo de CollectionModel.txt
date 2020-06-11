@@ -1,0 +1,67 @@
+El facade
+----------
+
+	@Override
+	public ResponseEntity<CollectionModel<EntityModel<Persona>>> getAllPersona(Integer elementosPorPagina,
+			String sortDirection, String sortColumnName, Integer numeroDePagina, FiltroPersonas filtroPersonas)
+			throws URISyntaxException {
+
+		// Llamar un servicio REST y devolver el resultado
+		// Execute the request specified in the given RequestEntity and returnthe
+		// response as ResponseEntity. The given ParameterizedTypeReference is used to
+		// pass generic type information
+
+		// Se realiza una llamada GET con parametros en la URL
+
+		LocalDate fechaInicio = filtroPersonas.getFechaInicio();
+		LocalDate fechaFin = filtroPersonas.getFechaFin();
+
+		UriComponentsBuilder builder;
+
+		if (fechaInicio != null && fechaFin != null) {
+			// Los parametros de la URL se tiene que llamar como estan definidos en los
+			// atributos del metodo, y son obligatorios, si no llegan a la API da error
+			// Ejemplo: findByFechaBetween(LocalDate inicio, LocalDate fin ...)
+			builder = UriComponentsBuilder.fromHttpUrl("http://localhost:8081/api/personas/search/findByFechaBetween")
+					.queryParam("inicio", fechaInicio.toString()).queryParam("fin", fechaFin.toString());
+		} else {
+			builder = UriComponentsBuilder.fromHttpUrl("http://localhost:8081/api/personas");
+		}
+		builder.queryParam("page", numeroDePagina.toString()).queryParam("size", elementosPorPagina.toString())
+				.queryParam("sort", sortColumnName + "," + sortDirection).build();
+
+//		ResponseEntity<String> response = restTemplate.getForEntity(builder.toUriString(), String.class);
+
+		// ***********************************************
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+		HttpEntity<String> entity = new HttpEntity<>("body", headers);
+		final ParameterizedTypeReference<CollectionModel<EntityModel<Persona>>> responseType = new ParameterizedTypeReference<CollectionModel<EntityModel<Persona>>>() {
+		};
+
+		ResponseEntity<CollectionModel<EntityModel<Persona>>> response = restTemplate.exchange(builder.build().toUri(),
+				HttpMethod.GET, entity, responseType);
+
+		return response;
+	}
+
+
+
+
+El controlador
+--------------
+
+
+			ResponseEntity<CollectionModel<EntityModel<Persona>>> response = personaService
+					.getAllPersona(elementosPorPagina, sortDirection, sortColumnName, numeroDePagina, filtroPersonas);
+
+			for (EntityModel<Persona> entityModel : response.getBody()) {
+				Persona p = entityModel.getContent();
+			}
+
+
+DAOS
+-----
+
+Los Dao son los de @RepositoryRestResource

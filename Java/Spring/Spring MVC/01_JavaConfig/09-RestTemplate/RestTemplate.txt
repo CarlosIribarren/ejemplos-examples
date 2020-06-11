@@ -1,0 +1,76 @@
+Estas llamadas lo que tienen es que enlazan una llamada con la otra llamada.
+Es decir, retornan en ResponseEntity con todos sus datos del servicio que consulta
+Peticion <<<<---- (ResponseEntity) Servicio1 <<<----- Servicio2
+Estas implementaciones son del sercicio del medio, el que enlaza una llamada con la otra.
+
+/*********************************************************************
+**** POST con parametros *********************************************
+**********************************************************************
+// Llamar un servicio REST y devolver el resultado
+// Execute the request specified in the given RequestEntity and returnthe response as ResponseEntity. The given ParameterizedTypeReference is used to pass generic type information
+
+RequestEntity<Iterable<Persona>> requestEntity = new RequestEntity<Iterable<Persona>>(HttpMethod.GET, new URI("http://localhost:80/api/personas"));
+			
+			
+final Map<String, Object> body = new HashMap<>();
+body.put("size", 1);
+body.put("page", 12345);
+body.put("baz", "2017-02-10");
+body.put("qux", Collections.emptyList());
+		    
+final RequestEntity<Map<String, Object>> requestEntity2 =  RequestEntity
+	.post(new URI("http://localhost:80/api/personas"))
+	.contentType(MediaType.APPLICATION_JSON)
+	.accept(MediaType.APPLICATION_JSON)
+	.body(body);
+
+final ParameterizedTypeReference<Iterable<Persona>> responseType = new ParameterizedTypeReference<Iterable<Persona>>() {};
+			
+			
+ResponseEntity<Iterable<Persona>> personas =  restTemplate.exchange(requestEntity2, responseType);
+
+
+****************************************************************************************
+***** GET pasando los parametros en la cabecera ****************************************
+****************************************************************************************
+
+URI url = new URI("http://localhost:80/api/personas");
+			
+HttpHeaders headers = new HttpHeaders();
+headers.set("page", "7");
+headers.set("size", "7");
+headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+
+HttpEntity<String> entity = new HttpEntity<>("body", headers);
+final ParameterizedTypeReference<Iterable<Persona>> responseType = new ParameterizedTypeReference<Iterable<Persona>>() {};
+			
+ResponseEntity<Iterable<Persona>> personas =  restTemplate.exchange(url, HttpMethod.GET, entity, responseType);
+
+// En la clase que se recibe la llamda hay que obtener los valores de la cabecera con @RequestHeader
+
+
+
+****************************************************************************************
+***** GET pasando los parametros en la URL ****************************************
+****************************************************************************************
+
+		// Se realiza una llamada GET con parametros en la URL
+
+		LocalDate fechaInicio = filtroPersonas.getFechaInicio();
+		LocalDate fechaFin = filtroPersonas.getFechaFin();
+
+		UriComponentsBuilder builder;
+
+		if (fechaInicio != null && fechaFin != null) {
+			// Los parametros de la URL se tiene que llamar como estan definidos en los
+			// atributos del metodo, y son obligatorios, si no llegan a la API da error
+			// Ejemplo: findByFechaBetween(LocalDate inicio, LocalDate fin ...)
+			builder = UriComponentsBuilder.fromHttpUrl("http://localhost:8081/api/personas/search/findByFechaBetween")
+					.queryParam("inicio", fechaInicio.toString()).queryParam("fin", fechaFin.toString());
+		} else {
+			builder = UriComponentsBuilder.fromHttpUrl("http://localhost:8081/api/personas");
+		}
+		builder.queryParam("page", numeroDePagina.toString()).queryParam("size", elementosPorPagina.toString())
+				.queryParam("sort", sortColumnName + "," + sortDirection).build();
+
+//		ResponseEntity<String> response = restTemplate.getForEntity(builder.toUriString(), String.class);
