@@ -1,0 +1,11 @@
+[Unit]
+Description=Activemq Application
+After=network.target
+[Service]
+Type=forking
+ExecStart=/root/scripts/activemq start
+ExecStop=/root/scripts/activemq stop
+User=root
+Group=root
+[Install]
+WantedBy=multi-user.target

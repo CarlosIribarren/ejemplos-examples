@@ -1,0 +1,26 @@
+********************************
+******* Info *******************
+********************************
+
+Si filebeat se instala desde el repositorio de paquetes no tendríamos que hacer nada.
+
+En caso de instalarlo manualmente podemos realizar los siguientes pasos:
+
+Crear un servicio en "/etc/systemd/system" llamado "filebeat.service"
+
+
+
+*********************************
+****** Comandos *****************
+*********************************
+
+1.- Cargar el servicio en el sistema operativo
+----------------------------------------------
+
+	sudo systemctl daemon-reload
+
+
+2.- Arrancar, estado y parar el servicio
+----------------------------------------
+
+	systemctl [start|status|stop] filebeat

@@ -1,0 +1,34 @@
+#[Unit]
+#Description=Apache Tomcat Web Application Container
+#After=syslog.target network.target
+
+#[Service]
+#Type=forking
+
+#Environment=JAVA_HOME=/opt/java
+#Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+#Environment=CATALINA_HOME=/opt/tomcat
+#Environment=CATALINA_BASE=/opt/tomcat
+#Environment='CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC'
+
+#ExecStart=/opt/tomcat/bin/startup.sh
+#ExecStop=/bin/kill -15 $MAINPID
+
+#User=root
+#Group=root
+
+#[Install]
+#WantedBy=multi-user.target
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+User=tomcat
+Group=tomcat
+ExecStart=/root/scripts/tomcat start
+ExecStop=/root/scripts/tomcat stop
+
+[Install]
+WantedBy=multi-user.target

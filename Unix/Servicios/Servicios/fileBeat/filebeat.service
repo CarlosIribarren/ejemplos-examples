@@ -1,0 +1,8 @@
+[Unit]
+ Description=Filebeat for billing data
+
+[Service]	
+ ExecStart=/opt/elk/beats/filebeat-7.5.2-linux-x86_64/startup.sh
+
+[Install]
+ WantedBy=multi-user.target

@@ -1,0 +1,85 @@
+#! /bin/bash
+# chkconfig: 2345 97 3
+# description: activemq start or stop
+# 
+# activemq application start or stop
+#
+#
+# processname: activemq
+# pidfile: /var/run/activemq.pid
+
+# Source function library.
+. /etc/init.d/functions
+
+RETVAL=0
+USER_OWNER="root"
+ACTIVEMQ_HOME="/opt/apache-activemq-5.9.1"
+
+#
+prog="activemq"
+
+
+start() {
+echo -n $"Starting $prog: "
+
+#Variables de entorno para activemq
+. /root/profile.root
+
+nohup $ACTIVEMQ_HOME/bin/activemq-admin "start" >  $ACTIVEMQ_HOME/log/broker.out &
+
+RETVAL=$?
+echo
+[ $RETVAL -eq 0 ] && touch /var/lock/subsys/activemq
+
+return $RETVAL
+}
+
+stop() {
+echo -n $"Stopping $prog: "
+su - $USER_OWNER -c " $ACTIVEMQ_HOME/bin/activemq-admin stop"
+RETVAL=$?
+echo
+
+return $RETVAL
+} 
+
+restart() {
+stop
+sleep 2
+start
+} 
+
+rhstatus() {
+
+RETVAL=`ps -fea|grep java|grep -c "apache-activemq"`
+if [ $RETVAL -eq 1 ]
+   then
+    echo "$prog is running..."
+else
+   echo "$prog is stopped"
+fi 
+
+RETVAL=$?
+} 
+
+case "$1" in
+   start)
+      start
+      ;;
+
+   stop)
+      stop
+      ;;
+   status)
+      rhstatus
+      ;;
+   restart)
+      restart
+      ;;
+   *)
+      echo $"Usage: $0 {start|stop|restart|status}"
+      exit 1
+esac
+
+exit $?
+

@@ -1,0 +1,29 @@
+#! /bin/bash
+
+start() {
+  # Comandos para arrancar aplicación
+  . /root/profile.root
+  echo "$CATALINA_HOME/bin/startup.sh"
+  $CATALINA_HOME/bin/startup.sh
+}
+
+stop() {
+  # Comandos para parar aplicación
+  . /root/profile.root
+###  $CATALINA_HOME/bin/shutdown.sh
+  pid=`ps -fa|grep java|grep tomcat`
+  kill -9 $pid
+  
+}
+
+restart() {
+  # Comandos para parar y lanzar la aplicación
+  stop
+  start
+}
+
+case $1 in
+  start|stop) "$1" ;;
+esac
+
+
