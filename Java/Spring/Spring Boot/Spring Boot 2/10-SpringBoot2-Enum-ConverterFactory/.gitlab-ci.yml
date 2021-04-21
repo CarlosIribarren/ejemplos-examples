@@ -1,0 +1,4 @@
+include:
+  - project: "ibil/edinor/edinor-ops"
+    ref: "master"
+    file: ".gitlab-ci.yml"
