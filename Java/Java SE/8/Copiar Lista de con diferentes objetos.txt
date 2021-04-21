@@ -1,0 +1,13 @@
+
+A partir de una lista con X objetos, se crea una lista nueva con objetos Z con propiedades concretas.
+-----------------------------------------------------------------------------------------------------
+
+
+		final List<ContractsResponseDto> listContractsResponse = Data.mock.stream().map(contract -> {
+
+			final ContractsResponseDto contractsResponse = ContractsResponseDto.builder()
+					.contractNumber(contract.getContractNumber())
+					.build();
+			return contractsResponse;
+
+		}).collect(Collectors.toList());
