@@ -1,0 +1,7 @@
+Ejecutar desde la linea de comandos:
+
+Ejemplo1:
+/usr/java/default/bin/java -cp '/var/tmp/socket-protocols-0.0.1-SNAPSHOT.jar' com.example.SocketProtocols
+
+Ejemplo2 (estando en la misma carpeta del JAR):
+java -cp '.' com.example.SocketProtocols
