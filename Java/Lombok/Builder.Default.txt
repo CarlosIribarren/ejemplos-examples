@@ -1,0 +1,12 @@
+
+*******************************
+****** @Builder.Default *******
+*******************************
+
+Si se tiene una anotacion @SuperBuilder(toBuilder = true) a nivel de clase, y queremos inicializar un atributo, se utiliza la anotacion @Builder.Default
+
+	@Builder.Default
+	private BusinessDetailsDto operator = new BusinessDetailsDto();
+
+
+Puede servir para luego no tener que andar peleando con los null en los objectos...
