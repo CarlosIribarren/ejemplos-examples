@@ -1,0 +1,9 @@
+Se configura conversor para realizar la conversion de String a LocalDateTime, es para cuando viene un @RequestParam tipo:
+
+@RequestParam(name = "date_to" ,required = false) LocalDateTime dateTo
+
+
+URL de ejemplo:
+
+	http://localhost:8082/locations?date_to=2021-07-16T17:25:48Z
+
