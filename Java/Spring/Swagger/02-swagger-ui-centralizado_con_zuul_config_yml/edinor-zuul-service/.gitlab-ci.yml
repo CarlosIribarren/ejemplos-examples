@@ -1,0 +1,7 @@
+include:
+  - project: "ibil/ibilsare/gitops"
+    ref: "master"
+    file: ".gitlab-ci.yml"
+
+variables:
+  ARTIFACT_NAME: "zuul-server"

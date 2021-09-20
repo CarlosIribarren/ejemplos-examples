@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: zuul-server
+    
+server:
+  port: 8090
+#  servlet:#    context-path: /api
+
+eureka :
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+   instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+zuul: 
+#  prefix: /api
+#  strip-prefix: false
+  routes: 
+    documentation: 
+      path: /api/documentation/**
+      service-id: documentation-service
+      
+    energycommunities:
+      path: /api/energy-communities/**
+      service-id: edinor-energy-communities-service
+      
+    studies: 
+      path: /api/installation-studies/**
+      service-id: edinor-installation-studies-service
+      
+
+
+
+
+

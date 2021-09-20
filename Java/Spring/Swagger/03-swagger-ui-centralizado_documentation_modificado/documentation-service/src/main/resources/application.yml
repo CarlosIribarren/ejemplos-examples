@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: documentation-service
+server:
+  port: 9093
+ 
+eureka:
+  instance:
+    appname: documentation-service
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      
+swagger: 
+  config: 
+    refreshrate: 5000

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: employee-application
+
+server:
+  port: 9092
+  
+eureka:
+  instance:
+    appname: employee-application
+    instance-id: ${spring.application.name}:${server.port}
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+              
