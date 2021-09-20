@@ -1,0 +1,22 @@
+********************************************************
+************ Crear objeto Page *************************
+********************************************************
+
+Normalmente JPA retorna un objeto Page con la lista de los resultados. Es decir, con los objetos que correspondan a la pagina y el tamaño solicitados.
+
+En el ejemplo de abajo se muestra como montar un objeto Page por nuestra cuenta. 
+Es decir, podemos poner X elementos en la lista y decir que es la pagina Y con un tamaño Z. 
+
+Ejemplo:
+--------
+(No tiene porque ser la realidad, podemos poner 2 elementos en la lista y decir que es la pagina de 10 con 10 elementos.
+Por lo que como la lista solo tiene dos elementos, y no 10 como es su tamaño, al construir el objeto Page pondra que tiene 102 elementos en total)
+
+
+Codigo:
+-------
+
+List<A> list = new ArrayList<>();
+
+final Pageable pageable = PageRequest.of(0, 1);
+final Page<InvoiceListResponseDto> page = new PageImpl<>(list, pageable, list.size());
