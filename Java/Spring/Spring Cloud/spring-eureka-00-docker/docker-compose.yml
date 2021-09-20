@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+
+  eureka-service:
+    build:
+      context: ../spring-eureka-00-eureka-service
+      dockerfile: ../spring-eureka-00-eureka-service/Dockerfile
+
+  hello-service:
+    build:
+      context: ../spring-eureka-00-hello-service
+      dockerfile: ../spring-eureka-00-hello-service/Dockerfile
+    environment:
+    - EUREKA_HOST=http://eureka-service:8761/eureka
